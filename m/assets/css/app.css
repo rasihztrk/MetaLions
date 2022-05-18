@@ -1,0 +1,348 @@
+body {
+    background-image: url("../images/sliders/bg1.png");
+    background-position: center;
+    background-size: cover;
+    transition: all 2s ease-in;
+    height: 100vh;;
+    overflow: hidden;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+.clock {
+    font-size: 18px;
+    color: white;
+    width: 90px;
+  }
+
+  .clockTwo {
+    color: white;
+    top: 15%;
+    left: 25px;
+    font-size: 30px;
+    margin: 20px;
+    margin-bottom: 20px;
+  }
+
+.connectTest {
+    width: 50px;
+    height: auto;
+}
+
+.hoodLionG {
+    font-size: 16px;
+    color: white;
+    margin: 0px;
+}
+
+.specialArea  {
+        height: auto;
+        border-radius: 30px 0px 0px 30px;
+        background-color: #00000087;
+        padding: 30px;
+        position: absolute;
+        backdrop-filter: blur(6px);
+}
+
+.specialAreaTwo {
+    height: 85vh;
+    border-radius: 0px 30px 30px 0px;
+    background-color: #00000087;
+    padding: 30px;
+    width: 100vw;
+    left: 770px;
+    position: absolute;
+}
+
+.programs {
+    cursor: pointer;
+    width: 100px;
+    background-color: #1f29378f;
+    border-radius: 8px;
+    height: 130px;
+    padding: 24px;
+}
+
+.iconImg {
+    width: 100%;
+    height: auto;
+}
+
+.boxText {
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    text-align: center;
+    line-height: 16px;
+}
+
+.centerItem {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+    padding: 0px;
+    text-align: center;
+}
+
+.mainArea {
+    cursor: pointer;
+    display: flex;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 96vw;
+    height: 76vh;
+    border-radius: 16px;
+    position: relative;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 16px;
+}
+
+.example::-webkit-scrollbar {
+    display: none;
+  }
+
+.bottomMenu{
+    display: flex;
+    width: 100%;
+    gap: 50px;
+}
+
+.bottomMenu img{
+    width: 50px;
+    height: auto;
+}
+
+#aplications {
+    display: none;
+}
+
+
+
+.footerIcon {
+    width: 50px;
+    height: auto;
+    display: flex;
+}
+
+.instagram::after{
+    content: "\f16d";
+}
+
+#back {
+    z-index: 9999999999;
+}
+
+.socialMediaPlace{
+    position: absolute;
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 150px;
+    top: -150px;
+    border-radius: 10px;
+    background-color: #00000087;
+    z-index: 99;
+    backdrop-filter: blur(5px);
+
+}
+
+.socialMedia{
+    display: flex;    
+    gap: 30px;
+    place-content: center;
+    margin: 20px 0px;
+    margin-top: 0px;
+}
+
+.hrPropery {
+    height: 1px;
+    background-color: red;
+    width: 90%;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 54px;
+}
+
+.socialMediaIcon {
+    width: 40px;
+    height: auto;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: unset;
+    height: unset;
+}
+
+object {
+    width: 100%;
+    height: 500px;
+}
+
+.modal-body {
+    padding: 0px !important;
+}
+
+.modal-footer{
+    align-self: center;
+    font-size: 12px;
+    padding: 0px;
+    color: white !important;
+}
+
+.teamiconTop {
+    width: 40px;
+    height: auto;
+}
+
+.modal-header {
+    background-color: #1F2937 !important;
+    color: white !important;
+}
+
+.modal-content {
+    background-color: #1F2937 !important;
+}
+
+.modal-body {
+    background-color: #1F2937 !important;
+}
+
+.btn-close {
+    background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'><path d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>") !important;
+}
+
+.lockText {
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.clockThree {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    font-size: 56px;
+    color: white;
+}
+
+.photoArea {
+    position: absolute;
+    bottom: 25px;
+    right: 5px;
+}
+
+.photo {
+    width: 40px;
+    height: auto;
+}
+
+.lockArea {
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    text-align-last: center;
+}
+
+.lockW{
+    width: 75px;
+    height: auto;
+}
+
+.tokenSPecial {
+    height: 100%;
+}
+
+.modal {
+    top:  50%;
+    transform: translateY(-40%);
+}
+
+.loadScreen {
+    position: absolute;
+    z-index: 99999;
+    background-image: url("../../../assets/sliders/bg3.png");
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@media only screen and (max-width: 768px) {
+    .modal-dialog {
+        max-width: unset;
+    }
+
+    .tlscSpecial {
+        height: 400px;
+    }
+
+    .tokenSPecial {
+        height: 400px;
+    }
+
+  }
+
+
+
+@media only screen and (max-width: 576px) {
+    .tokenSPecial {
+        height: 240px;
+    }
+
+    .iconImg {
+        width: 40px;
+        height: auto;
+    }
+    .tlscSpecial {
+        height: 240px;
+    }
+    .comingSoon {
+        height: 300px;
+    }
+  }
+
+@media only screen and (max-width: 420px) {
+    .socialMediaIcon {
+        width: 30px;
+        height: auto;
+    }
+    .bottomMenu img {
+        width: 40px;
+        height: auto;
+    }
+
+  }
+
+
+  @media only screen and (max-width: 376px) {
+    .modal {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+  }

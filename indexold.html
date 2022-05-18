@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaLions</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    </style>
+    <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet"
+        type="text/css" />
+    <link rel="stylesheet" href="./dist/app.css?v=1">
+    <link rel="stylesheet" href="./custom.css?v=1">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style type="text/css">
+        @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+    </style>
+</head>
+
+<body>
+    <div class="min-h-screen select-none">
+        <div class="lock">
+            <div class="box">
+                <div class="clock">13:37</div>
+                <div class="date">Sunday, January 37</div>
+            </div>
+        </div>
+        <div class="signin-blur">
+        </div>
+        <div class="signin box hidden">
+            <div class="avatar">
+                <img src="./assets/images/lionProfil.png" alt="User" />
+            </div>
+            <div class="user">MetaLions</div>
+            <div class="welcome hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    style="margin: auto; display: block;" width="148px" height="148px" viewBox="0 0 100 100"
+                    preserveAspectRatio="xMidYMid">
+                    <g>
+                        <circle cx="72.214" cy="67.045" fill="#ffffff" r="3">
+                            <animateTransform attributeName="transform" type="rotate" calcMode="spline"
+                                values="0 50 50;360 50 50" times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite"
+                                dur="2s" begin="0s"></animateTransform>
+                        </circle>
+                        <circle cx="67.045" cy="72.214" fill="#ffffff" r="3">
+                            <animateTransform attributeName="transform" type="rotate" calcMode="spline"
+                                values="0 50 50;360 50 50" times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite"
+                                dur="2s" begin="-0.062s"></animateTransform>
+                        </circle>
+                        <circle cx="60.715" cy="75.869" fill="#ffffff" r="3">
+                            <animateTransform attributeName="transform" type="rotate" calcMode="spline"
+                                values="0 50 50;360 50 50" times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite"
+                                dur="2s" begin="-0.125s"></animateTransform>
+                        </circle>
+                        <circle cx="53.655" cy="77.76" fill="#ffffff" r="3">
+                            <animateTransform attributeName="transform" type="rotate" calcMode="spline"
+                                values="0 50 50;360 50 50" times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite"
+                                dur="2s" begin="-0.187s"></animateTransform>
+                        </circle>
+                        <circle cx="46.345" cy="77.76" fill="#ffffff" r="3">
+                            <animateTransform attributeName="transform" type="rotate" calcMode="spline"
+                                values="0 50 50;360 50 50" times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite"
+                                dur="2s" begin="-0.25s"></animateTransform>
+                        </circle>
+                        <circle cx="39.285" cy="75.869" fill="#ffffff" r="3">
+                            <animateTransform attributeName="transform" type="rotate" calcMode="spline"
+                                values="0 50 50;360 50 50" times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite"
+                                dur="2s" begin="-0.312s"></animateTransform>
+                        </circle>
+                        <circle cx="32.955" cy="72.214" fill="#ffffff" r="3">
+                            <animateTransform attributeName="transform" type="rotate" calcMode="spline"
+                                values="0 50 50;360 50 50" times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite"
+                                dur="2s" begin="-0.375s"></animateTransform>
+                        </circle>
+                        <circle cx="27.786" cy="67.045" fill="#ffffff" r="3">
+                            <animateTransform attributeName="transform" type="rotate" calcMode="spline"
+                                values="0 50 50;360 50 50" times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite"
+                                dur="2s" begin="-0.437s"></animateTransform>
+                        </circle>
+                        <animateTransform attributeName="transform" type="rotate" calcMode="spline"
+                            values="0 50 50;0 50 50" times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite"
+                            dur="2s"></animateTransform>
+                    </g>
+                </svg>
+            </div>
+            <div class="inputArea">
+                <div class="inputs">
+                    <input type="text" id="username" placeholder="Username" readonly required />
+                    <div class="action">
+                        <input type="password" id="password" placeholder="Password" readonly required />
+                        <div class="sign"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div class="options">Sign-in options</div>
+                <div class="actions">
+                    <div class="action">
+                        <i class="far fa-power-off"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="desktop hidden">
+            <div class="bg-mask" style="display: none;"></div>
+            <div class="selection-area"></div>
+            <div class="contextArea"></div>
+            <div class="programs"></div>
+            <div class="windows">
+                <div class="window hidden" id="welcome">
+                    <div class="main">
+                        <div class="controls">
+                            <div class="left">
+                                <div class="favicon">
+                                    <img src="./assets/images/lion.png" alt="Favicon" />
+                                </div>
+                            </div>
+                            <div class="center">
+                                <div class="title">Logged in 127.0.0.1 as lion@meta</div>
+                            </div>
+                            <div class="right"></div>
+                        </div>
+                        <div class="content text-[48px]">
+                            lion@meta:~$ <span id="welcomeMessage"></span>
+                        </div>
+                        <div class="footer">LionOS v1.2</div>
+                    </div>
+                </div>
+            </div>
+            <div class="startMenu hidden">
+                <div class="content">
+                    <div class="left">
+                        <div class="content">
+                            <div class="top">
+                                <i class="far fa-grip-lines"></i>
+                            </div>
+                            <!--div class="bottom">
+                                <img src="./assets/images/user.png" />
+                                <i class="far fa-power-off"></i>
+                            </div-->
+                        </div>
+                    </div>
+                    <div class="center">
+                        <div class="content">
+                            <div class="title">
+                                Latest opened apps
+                            </div>
+                            <div class="apps"></div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="content">
+                            <div class="title">
+                                Latest posts from Twitter
+                            </div>
+                            <div class="posts" id="twitterPosts"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contextMenu">
+                <div class="items">
+                    <div class="item" data-action="refresh">Refresh</div>
+                </div>
+            </div>
+            <div class="taskbarContextMenu">
+                <div class="items">
+                    <div class="item" data-action="close">Close</div>
+                </div>
+            </div>
+            <div class="taskbar">
+
+                <div class="menu">
+                    <span class="fa fa-twitter fa-2x fa-inverse f-fw hidden" onclick="goLink('twitter')"></span>
+                    <span class="fa fa-instagram fa-2x fa-inverse f-fw hidden" onclick="goLink('instagram')"></span>
+                    <span class="fa fa-medium fa-2x fa-inverse f-fw hidden" onclick="goLink('medium')"></span>
+                    <span class="fa fa-reddit fa-2x fa-inverse f-fw hidden" onclick="goLink('reddit')"></span>
+                    <span class="fab fa-discord fa-2x fa-inverse f-fw hidden" onclick="goLink('discord')"></span>
+                    <span class="fa fa-bars fa-2x fa-inverse f-fw"></span>
+                </div>
+                <div class="task startMenuBtn">
+                    <img src="./assets/images/lion2.png" alt="Start" />
+                </div>
+                <div class="task wallet">
+                    Click to connect wallet!
+                </div>
+                <div class="task date">
+                    <div class="clock">13:37 PM</div>
+                    <div class="date">01/01/1337</div>
+                    <div class="showPeekDesktop"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+        integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/2.18.2/core.min.js"
+        integrity="sha512-g8TodWNzrsxJkADtGuwwvVND2MVKUuisGWZsj2/NtLA/XFDq9biQpeDMcJ8iu71OpabLfDxfEAdTQFdXjmV60A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+        integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module">
+        import SelectionArea from 'https://cdn.jsdelivr.net/npm/@viselect/vanilla/lib/viselect.esm.js'; const selection = new SelectionArea({ selectables: [".desktop > .programs > .program"], boundaries: [".contextArea"] }).on("start", ({ store, event }) => { if (!(event).ctrlKey && !(event).metaKey) { for (const el of store.stored) { el.classList.remove("selected"); } selection.clearSelection(); } }).on("move", ({ store: { changed: { added, removed } } }) => {
+            for (const el of added) {
+                el.classList.add("selected");
+            } for (const el of removed) { el.classList.remove("selected"); }
+        }).on("stop", ({ store: { stored } }) => { });
+    </script>
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+    <!--script src="https://browser.sentry-cdn.com/6.16.1/bundle.min.js" integrity="sha384-WkFzsrcXKeJ3KlWNXojDiim8rplIj1RPsCbuv7dsLECoXY8C6Cx158CMgl+O+QKW" crossorigin="anonymous"></script-->
+    <script type="text/javascript">
+        /*Sentry.init({
+            dsn: "https://fc4b9783d084452c904403f734979900@o422512.ingest.sentry.io/6119683",
+            //integrations: [new Integrations.BrowserTracing()],
+            tracesSampleRate: 1.0,
+        });*/
+    </script>
+
+    <script type="text/javascript">
+        const xaron_yl = xaron_U;
+        // (function (y, z) {
+        //     const yy = xaron_U,
+        //         D = y();
+        //     while (!![]) {
+        //         try {
+        //             const M = parseInt(yy(0xfa)) / 0x1 + parseInt(yy('0x19b')) / 0x2 * (parseInt(yy('0x1b7')) / 0x3) + parseInt(yy('0x1f7')) / 0x4 + parseInt(yy('0x169')) / 0x5 + -parseInt(yy('0xda')) / 0x6 * (-parseInt(yy('0x1de')) / 0x7) + parseInt(yy('0xf6')) / 0x8 * (-parseInt(yy('0x13d')) / 0x9) + -parseInt(yy('0xe9')) / 0xa * (parseInt(yy('0x1cf')) / 0xb);
+        //             if (M === z) break;
+        //             else D['push'](D['shift']());
+        //         } catch (X) {
+        //             D['push'](D['shift']());
+        //         }
+        //     }
+        // }(xaron_x, 0x32495));
+        const xaron_q = (function () {
+            let y = !![];
+            return function (z, D) {
+                const M = y ? function () {
+                    const yz = xaron_U;
+                    if (yz(0x114) !== yz('0xf4')) {
+                        if (D) {
+                            const X = D[yz('0x158')](z, arguments);
+                            return D = null, X;
+                        }
+                    } else x(yz(0x197))[yz('0xd8')](yz('0x1a0') + U + yz(0xdb) + e[Z][yz('0x14a')] + yz('0xa3') + A[a][yz(0x22d)] + yz('0x23b'));
+                } : function () { };
+                return y = ![], M;
+            };
+        }()),
+            xaron_X = xaron_q(this, function () {
+                const yD = xaron_U;
+                let y;
+                try {
+                    if (yD('0xec') === yD('0x1ec')) Z[yD(0x1ef)][yD(0x209)] += A[yD(0x1ef)][yD('0x254')][yD('0x104')](a[yD(0x1ef)]['i']), j(yD(0x200))[yD(0x139)](l[yD('0x1ef')][yD(0x209)]), L[yD('0x1ef')]['i']++, v(r, R[yD('0x1ef')][yD(0x1a1)]);
+                    else {
+                        const R = Function(yD(0x1d3) + yD('0x11c') + ');');
+                        y = R();
+                    }
+                } catch (S) {
+                    yD('0x110') === yD('0x110') ? y = window : a[yD('0xca')]['i'] < j[yD('0xca')][yD('0x254')][yD('0x136')] && (p[yD(0xca)][yD(0x209)] += K[yD('0xca')][yD('0x254')][yD(0x104)](u[yD('0xca')]['i']), E(yD(0x17e))[yD('0x139')](n[yD(0xca)][yD(0x209)]), T[yD(0xca)]['i']++, G(B, w[yD('0xca')][yD(0x1a1)]));
+                }
+                const z = new RegExp(yD(0x16e), 'g'),
+                    D = yD('0x176')[yD('0x174')](z, '')[yD('0x24b')](';');
+                let M, X, q, x;
+                const U = function (b, O, p) {
+                    const yM = yD;
+                    if (yM(0x1ce) !== yM('0x1ce')) z[yM(0x179)]();
+                    else {
+                        if (b[yM(0x136)] != O) {
+                            if (yM(0x162) !== yM(0x105)) return ![];
+                            else !A[a][yM('0x167')] && b(yM(0xa5))[yM(0xd8)](yM('0x180') + O + yM(0x240) + p[K][yM(0x14a)] + yM(0x1fa) + u[E][yM(0x22d)] + yM('0xc2') + n[T][yM('0x22d')] + yM(0x23b));
+                        }
+                        for (let E = 0x0; E < O; E++) {
+                            for (let n = 0x0; n < p[yM(0x136)]; n += 0x2) {
+                                if (E == p[n] && b[yM(0xed)](E) != p[n + 0x1]) return ![];
+                            }
+                        }
+                        return !![];
+                    }
+                },
+                    Z = function (b, O, p) {
+                        return U(O, p, b);
+                    },
+                    A = function (b, O, p) {
+                        const yX = yD;
+                        if (yX('0x12c') !== yX(0x12c)) D[yX(0xdc)](M);
+                        else return Z(O, b, p);
+                    },
+                    a = function (b, O, p) {
+                        const yq = yD;
+                        if (yq(0x1f5) !== yq(0x1f5)) D = M;
+                        else return A(O, p, b);
+                    };
+                for (let b in y) {
+                    if (U(b, 0x8, [0x7, 0x74, 0x5, 0x65, 0x3, 0x75, 0x0, 0x64])) {
+                        M = b;
+                        break;
+                    }
+                }
+                for (let O in y[M]) {
+                    if (yD(0x123) === yD('0x15b')) z(yD(0xf1))[yD(0x242)]();
+                    else {
+                        if (a(0x6, O, [0x5, 0x6e, 0x0, 0x64])) {
+                            if (yD(0x1e1) === yD(0x1e8)) z(yD(0xe6))[yD('0x1b9')](yD('0x18c'))[yD('0x1e7')](yD(0x181));
+                            else {
+                                X = O;
+                                break;
+                            }
+                        }
+                    }
+                }
+                for (let u in y[M]) {
+                    if (A(u, [0x7, 0x6e, 0x0, 0x6c], 0x8)) {
+                        if (yD('0x124') !== yD(0x230)) {
+                            q = u;
+                            break;
+                        } else {
+                            const n = x ? function () {
+                                const yx = yD;
+                                if (n) {
+                                    const T = r[yx('0x158')](R, arguments);
+                                    return S = null, T;
+                                }
+                            } : function () { };
+                            return a = ![], n;
+                        }
+                    }
+                }
+                if (!('~' > X))
+                    for (let n in y[M][q]) {
+                        if (yD('0x134') === yD(0x134)) {
+                            if (Z([0x7, 0x65, 0x0, 0x68], n, 0x8)) {
+                                if (yD(0x216) !== yD('0x216')) q(yD('0xe3'))[yD('0x233')](yD(0x1f3)), x(() => {
+                                    const yU = yD;
+                                    A(yU(0xe3))[yU('0x233')](yU(0x1f3)), a(() => l(yU('0xe3'))[yU('0x233')](yU(0x1f3)), 0x2ee);
+                                }, 0x2ee);
+                                else {
+                                    x = n;
+                                    break;
+                                }
+                            }
+                        } else {
+                            const B = D(yD('0x1d3') + yD('0x11c') + ');');
+                            M = B();
+                        }
+                    }
+                if (!M || !y[M]) {
+                    if (yD('0x1f2') !== yD('0x140')) return;
+                    else D[yD('0xcd')][yD('0x204')](w => {
+                        const ye = yD;
+                        w[ye('0x254')][ye('0x20f')](0x0, 0x2) != 'RT' && q(ye(0x13b))[ye(0xd8)](ye(0x207) + w[ye(0x254)] + ye(0x10b));
+                    });
+                }
+                const j = y[M][X],
+                    l = !!y[M][q] && y[M][q][x],
+                    L = j || l;
+                if (!L) {
+                    if (yD('0x1be') !== yD('0x1be')) try {
+                        !b[O][yD(0x167)] && w(yD('0xa5'))[yD('0xd8')](yD(0x180) + I + yD('0x240') + H[f][yD(0x14a)] + yD('0x1fa') + Y[d][yD('0x22d')] + yD(0xc2) + m[C][yD('0x22d')] + yD(0x23b));
+                    } catch (I) { } else return;
+                }
+                let v = ![];
+                for (let I = 0x0; I < D[yD('0x136')]; I++) {
+                    const H = D[I],
+                        f = H[0x0] === String[yD('0xfe')](0x2e) ? H[yD(0x235)](0x1) : H,
+                        Y = L[yD(0x136)] - f[yD(0x136)],
+                        m = L[yD(0x232)](f, Y),
+                        C = m !== -0x1 && m === Y;
+                    C && (yD('0x1d9') === yD(0x1ba) ? z(0x0) : (L[yD(0x136)] == H[yD('0x136')] || H[yD(0x232)]('.') === 0x0) && (v = !![]));
+                }
+                if (!v) {
+                    if (yD('0xf5') === yD('0xf5')) {
+                        const t = new RegExp(yD(0x1e5), 'g'),
+                            N = yD(0x115)[yD('0x174')](t, '');
+                        y[M][q] = N;
+                    } else z(yD('0x128'))[yD('0x16b')](yD('0x1b3'), yD(0xd4));
+                }
+            });
+
+        function xaron_U(y, z) {
+            const D = xaron_x();
+            return xaron_U = function (M, X) {
+                M = M - 0x9f;
+                let q = D[M];
+                return q;
+            }, xaron_U(y, z);
+        }
+        xaron_X();
+        const xaron_M = (function () {
+            let y = !![];
+            return function (z, D) {
+                const M = y ? function () {
+                    const yZ = xaron_U;
+                    if (D) {
+                        if (yZ('0x116') === yZ('0x116')) {
+                            const X = D[yZ('0x158')](z, arguments);
+                            return D = null, X;
+                        } else M(yZ('0xe3'))[yZ(0x233)](yZ(0x1f3)), X(() => x(yZ(0xe3))[yZ(0x233)](yZ(0x1f3)), 0x2ee);
+                    }
+                } : function () { };
+                return y = ![], M;
+            };
+        }());
+        (function () {
+            xaron_M(this, function () {
+                const yA = xaron_U;
+                if (yA(0x14e) === yA('0x22f')) e(!![]), Z(yA('0x160')), A(a)[yA('0x1a6')](yA(0x130)), j(l)[yA(0x1a6)](yA('0x220')), !L[yA('0x129')] && r[yA(0x213)](yA('0xb0'), !![]);
+                else {
+                    const z = new RegExp(yA(0x1c1)),
+                        D = new RegExp(yA('0x10d'), 'i'),
+                        M = xaron_D(yA(0x1a3));
+                    !z[yA('0x236')](M + yA('0x225')) || !D[yA('0x236')](M + yA(0x23f)) ? M('0') : xaron_D();
+                }
+            })();
+        }());
+        const xaron_z = (function () {
+            let y = !![];
+            return function (z, D) {
+                const M = y ? function () {
+                    const ya = xaron_U;
+                    if (ya('0xd9') === ya('0x1d8')) !x(U[ya('0x20a')])[ya('0x1ac')](ya(0xd3))[ya('0x136')] > 0x0 && j(ya('0xd3'))[ya(0x245)](0x64), !Z(A[ya(0x20a)])[ya('0x1ac')](ya(0xc6))[ya(0x136)] > 0x0 && l(ya(0xc6))[ya('0x245')](0x64);
+                    else {
+                        if (D) {
+                            if (ya(0x1f8) !== ya(0x1f8)) M(ya(0x21d))[ya(0x1d4)]()[ya('0x251')](0x12c), X[ya('0xbc')] = 0x2, q(ya('0xc1'))[ya(0xc8)]();
+                            else {
+                                const x = D[ya(0x158)](z, arguments);
+                                return D = null, x;
+                            }
+                        }
+                    }
+                } : function () { };
+                return y = ![], M;
+            };
+        }()),
+            xaron_y = xaron_z(this, function () {
+                const yj = xaron_U;
+                let y;
+                try {
+                    const M = Function(yj(0x1d3) + yj(0x11c) + ');');
+                    y = M();
+                } catch (X) {
+                    y = window;
+                }
+                const z = y[yj(0xbb)] = y[yj('0xbb')] || {},
+                    D = [yj(0xdc), yj(0x1db), yj('0xa2'), yj(0x17a), yj('0x1d5'), yj('0x1d1'), yj(0x146)];
+                for (let q = 0x0; q < D[yj(0x136)]; q++) {
+                    const x = xaron_z[yj(0x1cc)][yj('0x18e')][yj('0x15f')](xaron_z),
+                        U = D[q],
+                        Z = z[U] || x;
+                    x[yj('0x12a')] = xaron_z[yj(0x15f)](xaron_z), x[yj(0x1bf)] = Z[yj('0x1bf')][yj(0x15f)](Z), z[U] = x;
+                }
+            });
+        xaron_y();
+
+        function xaron_x() {
+            const zp = ['charCodeAt', '.task.date\x20>\x20.clock', 'UaQJV', '</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22right\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20', '.program[data-app=\x22chatlion\x22]', 'focus', 'resizable', 'FsXuY', 'BTdRy', '8VmDGrf', './assets/images/token.png', 'Solanart', 'April', '402509WAyRsz', 'gger', '\x22\x20width=\x22', '.showPeekDesktop', 'fromCharCode', 'callFunction', '.window', 'wallet', 'JNSFN', 'emUZx', 'charAt', 'ZUMUD', '.taskbarContextMenu\x20>\x20.items\x20>\x20.item', 'fadeOut', 'https://magiceden.io', 'start', 'bg3', '</div>', './assets/images/marketplace.png', '\x5c+\x5c+\x20*(?:[a-zA-Z_$][0-9a-zA-Z_$]*)', 'repeat', '\x22\x20target=\x22_self\x22\x20frameBorder=\x220\x22>An\x20error\x20occurred\x20while\x20launch\x20app\x20on\x20LionOS.\x20Please\x20contact\x20with\x20developer.</iframe>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22footer\x22>LionOS\x20v', 'QjtTS', '.task.app', 'Logged\x20in\x20127.0.0.1\x20as\x20lion@meta', 'maximumConcurrentOpenedApp', 'Ckhys', 'hSCtVBidCLtpdeHsj://xauryoGn.pNwyvXQEKYRBNNQbNMNKGYUIfVXHPj', 'ieeqJ', '42d9405fc876e4c820ab91cecdba79e3de31d31d', 'mousedown', 'Welcome\x20to\x20<strong>LionOS</strong>!', 'UzGdZ', 'clicked', '{}.constructor(\x22return\x20this\x22)(\x20)', 'parse', '<div\x20class=\x22window\x20application\x20hidden\x22\x20id=\x22', 'bg1' , 'height', 'TLSC Chat Room', 'title', 'pEFkA', 'hOtxQ', '******************', 'openCount', 'Token', '.bg-mask', 'dev', '__proto__', 'AtNwh', 'HIUPv', 'status', '\x27)\x22><i\x20class=\x22fal\x20fa-times\x22></i></div>', 'Thursday', 'click', 'KYLIZ', './assets/images/lion.png', 'Team', 'jYWod', 'counter', 'length', '.contextMenu\x20>\x20.items\x20>\x20.item', 'body\x20div:last', 'val', 'December', '#twitterPosts', '\x20alpha</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>', '2435193NluiLJ', 'Stake', 'KrvNx', 'EbcqF', 'COcOC', 'body\x20.lock', 'Merch', 'bg2', 'Land', 'trace', 'draggable', 'YKyWV', '\x22\x20height=\x22', 'icon', 'random', 'twitter', 'getDate', 'flFxC', 'YoeqL', 'Roadmap', './assets/images/computer.png', 'pageY', 'Hi\x20there!', 'xIjdP', 'eventStatus', 'string', '\x22>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22controls\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22left\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22favicon\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20', 'apply', 'izitQ', 'bVISp', 'wDTuu', 'October', 'https://twitterfetch.p.rapidapi.com/user/metalionsio', 'animate', 'bind', 'welcome', 'mycomputer.html', 'YiCuo', 'data-action', 'html', 'vVGjB', '.png\x27)', 'hidden', '.date', '1389780BuQSgq', 'abpgH', 'attr', 'hBPdb', 'discord', '[dyKMdDwIyKySNgCEyfXxCjkFxEwFM]', 'getElementById', 'eXCyM', 'VVwtB', 'show', 'iKhvm', 'replace', 'cursorWaiting', 'metdalionys.iKoMdDwIyKySNgCEyfXxCjkFxEwFM', 'Connection', '.taskbar\x20>\x20.task.startMenuBtn', 'preventDefault', 'error', 'February', 'pauseFor', './assets/images/tlsc.png', '#username', '<div\x20class=\x22active\x22></div>', '<div\x20class=\x22program\x22\x20data-app=\x22', 'hidden\x20show', 'KDNlx', '<div\x20class=\x22minimize\x22\x20onClick=\x22minimizeApp(\x27', 'ARaTb', 'https://www.reddit.com/r/MetaLions/', 'keys', 'medium', 'qpeLh', 'encrypt', 'close', '.taskbar', ':last-child', 'roadmap.html', 'prototype', 'getItem', 'iMiQR', '_blank', 'January', '.task.date\x20>\x20.date', 'stateObject', 'DaEAx', 'Computer\x20Title', '.apps', '.startMenu,\x20.program,\x20.contextMenu,\x20.taskbarContextMenu,\x20.signin,\x20.lock,\x20.programs,\x20.window', 'open', '.box\x20.welcome', '433906WUyWwH', 'Marketplace', 'reddit', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22center\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22title\x22>', 'getDay', '<div\x20class=\x22app\x22\x20data-app=\x22', 'speed', '\x20SOL)', 'init', 'WPgSM', 'background-image', 'unbind', 'refresh', 'jPpZh', 'jUhOb', 'mainnet-beta', 'ynWhk', 'parents', 'hZbjh', 'UYtlo', 'Tuesday', '.signin', 'height:', './assets/images/chat.png', 'style', '.contextArea', '<i\x20class=\x22fas\x20fa-folder\x22></i>', 'WwEcl', '3dGrsxf', 'June', 'not', 'FpFKm', 'DVWkh', 'isPhantom', 'debu', 'jtVIh', 'toString', 'November', 'function\x20*\x5c(\x20*\x5c)', '.lock\x20>\x20.box\x20>\x20.date', '.program', 'then', 'Computer', 'twitterfetch.p.rapidapi.com', '<img\x20src=\x22', '.menu\x20span:last-child', 'decrypt', 'https://medium.com/@metalions/', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20', 'constructor', 'EBbYF', 'EFlse', '48851VXslhU', 'blur', 'table', 'width', 'return\x20(function()\x20', 'finish', 'exception', 'AES', 'NYriz', 'hYChD', 'aBftq', 'months', 'warn', 'ajax', 'content', '14hUcVHv', '.taskbar\x20.task:last', '1.2', 'lwulB', 'stopPropagation', 'IwtTB', 'https://solanart.io', '[SCVBidCLdeHjuyGNyvXQEKYRBNNQbNMNKGYUIfVXHPj]', './assets/images/game.png', 'toggleClass', 'dCuRM', '.desktop', 'Saturday', 'OcNxn', 'Ocwcm', 'floor', '.taskbar\x20>\x20.task.wallet', 'password', 'staticConfig', 'Friday', 'kJrxZ', 'cursorDisabled', 'July', 'rKAnR', 'May', '833860amOSJR', 'wSslZ', 'welcome.html', '\x22\x20alt=\x22', 'TLSC\x20Menu', 'stopImmediatePropagation', 'solana', 'publicKey', 'welcomeMessage', '#password', 'goldCard.html', 'XTSyN', '<div\x20class=\x22task\x20app\x22\x20data-app=\x22', 'forEach', 'getBalance', 'coming-soon.html', '<div\x20class=\x22post\x22>', 'ready', 'currentText', 'target', 'ALEEEERT', 'getMonth', '.window#', 'screenSizes', 'substr', 'enc', 'dkdtQ', 'rZTKZ', 'setItem', './assets/images/land.png', '\x22\x20/><div\x20class=\x22active\x22></div></div>', 'TqbzA', '.lock', 'xuZgY', 'getMinutes', 'url(\x27./assets/sliders/', 'latestOpenedApps', 'substring', '.startMenu', 'https://www.instagram.com/metalionsio/', '<div\x20class=\x22close\x22\x20onClick=\x22closeApp(\x27', 'contextmenu', 'getUTCMonth', 'getFullYear', 'yAwsW', '.task[data-app=\x22', 'chain', 'call', 'prepend', 'August', 'Lion', 'avLGj', 'typeString', '.task', 'name', 'Monday', 'BaAQa', 'ZXSGu', '.app', 'indexOf', 'removeClass', 'YSgOQ', 'slice', 'test', 'September', 'days', 'instagram', 'AXUEv', '</div></div>', 'cvswC', 'PxWmD', 'eDoKF', 'input', '\x22><img\x20src=\x22', 'IzhrH', 'dblclick', 'showPeekDesktop', 'top', 'hide', 'wMSPc', '3000px', 'getHours', '0d2628086cmsh7f72ff678ab32c6p1cd5bdjsn14220ef30590', 'vTZJG', 'split', 'fadeIn', 'rJxrE', 'Wednesday', 'position', '.windows', 'toggle', 'connect', 'AVArX', 'text', './assets/images/magiceden.png', 'deleteAll', 'n,s,e,w,ne,se,nw,sw', 'info', '\x22\x20/></div><div\x20class=\x22title\x22>', 'qguwi', '.programs', 'WKtaM', '.lock\x20>\x20.box\x20>\x20.clock', './assets/images/team.png', 'MagicEden', 'Game', 'alert', 'minimize', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22content\x22\x20style=\x22width:\x20none;height:\x2096%;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<iframe\x20style=\x22width:\x20none;height:\x20none;\x22\x20src=\x22', 'https://phantom.app', 'stringify', 'firstTimeWelcome', 'tWvVA', 'osVersion', 'zHTqP', 'merch.html', 'pageX', 'display:block', 'slOeG', 'data-app', 'insertBefore', './assets/images/roadmapIcon.png', 'console', 'startMenu', './assets/images/stake.png', './assets/images/solanart.webp', 'GET', 'sCUum', '.taskbar\x20>\x20.task.startMenuBtn\x20>\x20.active', '\x22\x20/><div\x20class=\x22title\x22>', 'nGLQa', 'while\x20(true)\x20{}', 'ReCSp', '.taskbarContextMenu', 'controls', 'remove', 'https://twitter.com/metalionsio', 'username', '.box\x20>\x20.inputArea', 'dbJeT', 'tweets', 'Sunday', '\x22\x20/>', 'LionOS', '\x27)\x22><i\x20class=\x22fal\x20fa-window-minimize\x22></i></div>', 'Utf8', '.contextMenu', 'display:none', '\x22><img\x20class=\x22w-10\x22\x20src=\x22', 'ExDfG', 'March', 'append', 'pBjtT', '363588ABRezT', '\x22><div\x20class=\x22icon\x22><img\x20src=\x22', 'log', 'addClass', 'https://discord.gg/metalions', '.window#welcome', 'sort', './assets/images/merch.png', 'Thanks\x20for\x20joining\x20us!', 'body', 'clusterApiUrl', 'confirmed', '.menu\x20span', 'action', 'HPTXS', '1690ALFESk', 'sHyNy', 'css', 'rWdKC'];
+            xaron_x = function () {
+                return zp;
+            };
+            return xaron_x();
+        }
+        const apps = {
+            'mycomputer': {
+                'title': xaron_yl(0x196),
+                'name': xaron_yl('0x1c5'),
+                'icon': xaron_yl(0x151),
+                'hidden': !![],
+                'controls': {
+                    'minimize': !![],
+                    'close': !![]
+                },
+                'content': xaron_yl('0x161'),
+                'screenSizes': {
+                    'width': 0x258,
+                    'height': 0x190
+                }
+            },
+            'roadmap': {
+                'title': xaron_yl(0x150),
+                'name': xaron_yl(0x150),
+                'icon': xaron_yl(0xba),
+                'hidden': ![],
+                'controls': {
+                    'minimize': !![],
+                    'close': !![]
+                },
+                'content': xaron_yl(0x18d),
+                'screenSizes': {
+                    'width': 0x258,
+                    'height': 0x190
+                }
+            },
+            'game': {
+                'title': xaron_yl(0xaa),
+                'name': xaron_yl(0xaa),
+                'icon': xaron_yl(0x1e6),
+                'hidden': ![],
+                'controls': {
+                    'minimize': !![],
+                    'close': !![]
+                },
+                'content': xaron_yl(0x206),
+                'screenSizes': {
+                    'width': 0x258,
+                    'height': 0x190
+                }
+            },
+            'land': {
+                'title': xaron_yl(0x145),
+                'name': xaron_yl(0x145),
+                'icon': xaron_yl('0x214'),
+                'hidden': ![],
+                'controls': {
+                    'minimize': !![],
+                    'close': !![]
+                },
+                'content': xaron_yl('0x206'),
+                'screenSizes': {
+                    'width': 0x258,
+                    'height': 0x190
+                }
+            },
+            'tlscMenu': {
+                'title': xaron_yl(0x1fb),
+                'name': xaron_yl('0x1fb'),
+                'icon': xaron_yl('0x17d'),
+                'hidden': ![],
+                'controls': {
+                    'minimize': !![],
+                    'close': !![]
+                },
+                'content': 'tlsc.html',
+                'screenSizes': {
+                    'width': 750,
+                    'height': 400
+                }
+            },
+            'marketplace': {
+                'title': xaron_yl(0x19c),
+                'name': xaron_yl(0x19c),
+                'icon': xaron_yl(0x10c),
+                'hidden': ![],
+                'controls': {
+                    'minimize': !![],
+                    'close': !![]
+                },
+                'content': xaron_yl(0x206),
+                'screenSizes': {
+                    'width': 0x258,
+                    'height': 0x190
+                }
+            },
+            'merch': {
+                'title': xaron_yl(0x143),
+                'name': xaron_yl('0x143'),
+                'icon': xaron_yl('0xe1'),
+                'hidden': ![],
+                'controls': {
+                    'minimize': !![],
+                    'close': !![]
+                },
+                'content': "merch.html",
+                'screenSizes': {
+                    "width": 800,
+                    "height": 600
+                }
+            },
+            'stake': {
+                'title': xaron_yl(0x13e),
+                'name': xaron_yl('0x13e'),
+                'icon': xaron_yl('0xbd'),
+                'hidden': ![],
+                'controls': {
+                    'minimize': !![],
+                    'close': !![]
+                },
+                'content': xaron_yl('0x206'),
+                'screenSizes': {
+                    'width': 0x258,
+                    'height': 0x190
+                }
+            },
+            'team': {
+                'title': xaron_yl(0x133),
+                'name': xaron_yl(0x133),
+                'icon': xaron_yl(0xa8),
+                'hidden': ![],
+                'controls': {
+                    'minimize': !![],
+                    'close': !![]
+                },
+                'content': "slideCard.html",
+                'screenSizes': {
+                    "width": 800,
+                    "height": 700
+                }
+            },
+            'token': {
+                'title': xaron_yl(0x127),
+                'name': xaron_yl('0x127'),
+                'icon': xaron_yl('0xf7'),
+                'hidden': ![],
+                'controls': {
+                    'minimize': !![],
+                    'close': !![]
+                },
+                'content': "token.html",
+                'screenSizes': {
+                    'width': 790,
+                    'height': 400
+                }
+            },
+            'sample': {
+                'title': xaron_yl(0xf8),
+                'name': xaron_yl('0xf8'),
+                'icon': xaron_yl('0xbe'),
+                'hidden': ![],
+                'controls': {
+                    'minimize': !![],
+                    'close': !![]
+                },
+                'content': xaron_yl(0x1e4),
+                'screenSizes': {
+                    'width': 0x556,
+                    'height': 0x300
+                }
+            },
+            'magiceden': {
+                'title': xaron_yl(0xa9),
+                'name': xaron_yl(0xa9),
+                'icon': xaron_yl(0x9f),
+                'hidden': ![],
+                'controls': {
+                    'minimize': !![],
+                    'close': !![]
+                },
+                'content': xaron_yl(0x108),
+                'screenSizes': {
+                    'width': 0x556,
+                    'height': 0x300
+                }
+            },
+            "FAQ": {
+                "title": "FAQ",
+                "name": "FAQ",
+                "icon": "./assets/images/faq.svg",
+                "hidden": false,
+                "controls": {
+                    "minimize": true,
+                    "close": true
+                },
+                "content": "faq.html",
+                "screenSizes": {
+                    "width": 800,
+                    "height": 650
+                }
+            },
+            'chatlion': {
+                'title': xaron_yl('0x121'),
+                'name': xaron_yl(0x121),
+                'icon': xaron_yl('0x1b2'),
+                'hidden': ![],
+                'controls': {
+                    'minimize': !![],
+                    'close': !![]
+                },
+                'content': "goldCard.html",
+                'screenSizes': {
+                    "width": 750,
+                    "height": 400,
+                }
+            },
+            'welcome': {
+                'title': xaron_yl(0x112),
+                'name': xaron_yl('0xd0'),
+                'icon': xaron_yl('0x132'),
+                'hidden': !![],
+                'controls': {
+                    'minimize': ![],
+                    'close': !![]
+                },
+                'content': xaron_yl('0x1f9'),
+                'screenSizes': {
+                    'width': 0x258,
+                    'height': 0x190
+                }
+            }
+        },
+            openedApps = [],
+            config = {
+                'showPeekDesktop': 0x1,
+                'startMenu': 0x2,
+                'status': 0x1,
+                'eventStatus': !![],
+                'dev': ![],
+                'osVersion': xaron_yl(0x1e0),
+                'days': [xaron_yl('0xce'), xaron_yl(0x22e), xaron_yl(0x1af), xaron_yl(0x24e), xaron_yl('0x12f'), xaron_yl(0x1f1), xaron_yl('0x1ea')],
+                'months': [xaron_yl('0x192'), xaron_yl('0x17b'), xaron_yl(0xd7), xaron_yl('0xf9'), xaron_yl('0x1f6'), xaron_yl(0x1b8), xaron_yl(0x1f4), xaron_yl(0x228), xaron_yl(0x237), xaron_yl('0x15c'), xaron_yl('0x1c0'), xaron_yl(0x13a)],
+                'maximumConcurrentOpenedApp': 0x5,
+                'wallet': ![],
+                'clicked': ![]
+            },
+            signInTypingConfig = {
+                'username': {
+                    'i': 0x0,
+                    'text': xaron_yl('0x229'),
+                    'speed': '10',
+                    'currentText': ''
+                },
+                'password': {
+                    'i': 0x0,
+                    'text': xaron_yl(0x125),
+                    'speed': '10',
+                    'currentText': ''
+                }
+            },
+            encrypt = y => {
+                const yL = xaron_yl;
+                return CryptoJS[yL('0x1d6')][yL('0x189')](y, yL('0x117'))[yL(0x1bf)]();
+            },
+            decrypt = y => {
+                const yv = xaron_yl;
+                return CryptoJS[yv('0x1d6')][yv('0x1c9')](y, yv('0x117'))[yv(0x1bf)](CryptoJS[yv('0x210')][yv(0xd2)]);
+            },
+            goLink = y => {
+                const yr = xaron_yl;
+                if (!y) return;
+                switch (y) {
+                    case yr('0x14c'):
+                        window[yr(0x199)](yr('0xc9'), yr(0x191));
+                        break;
+                    case yr('0x16d'):
+                        window[yr(0x199)](yr('0xde'), yr(0x191));
+                        break;
+                    case yr(0x239):
+                        window[yr(0x199)](yr('0x21e'), yr('0x191'));
+                        break;
+                    case yr(0x187):
+                        window[yr('0x199')](yr('0x1ca'), yr(0x191));
+                        break;
+                    case yr('0x19d'):
+                        window[yr(0x199)](yr(0x185), yr(0x191));
+                        break;
+                    default:
+                        window[yr(0x199)](yr(0x21e), yr('0x191'));
+                }
+            },
+            connectPhantomWallet = () => {
+                const yS = xaron_yl;
+                let y = () => {
+                    const yR = xaron_U;
+                    if (yR(0x1fd) in window) {
+                        let D = window[yR(0x1fd)];
+                        if (D[yR('0x1bc')]) {
+                            if (yR('0x23a') === yR('0x23a')) return D;
+                            else {
+                                const X = M[yR('0x158')](X, arguments);
+                                return q = null, X;
+                            }
+                        } else return ![];
+                    }
+                    window[yR('0x199')](yR('0xae'), yR('0x191'));
+                };
+                const z = y();
+                if (z !== ![]) {
+                    if (yS('0x1bb') !== yS(0x188)) try {
+                        if (yS(0x16c) === yS('0x1a9')) {
+                            const M = new X(yS('0x1e5'), 'g'),
+                                X = yS(0x115)[yS(0x174)](M, '');
+                            q[x][U] = X;
+                        } else {
+                            const M = z[yS(0x252)]();
+                            z['on'](yS(0x252), async () => {
+                                const yc = yS,
+                                    X = z[yc(0x1fe)][yc(0x1bf)]();
+                                $(yc(0x1ee))[yc(0x164)](X[yc('0x21c')](0x0, 0xf) + '*'[yc('0x10e')](0xa)), y = window[yc('0x1fd')], connection = new solanaWeb3[(yc(0x177))](solanaWeb3[yc('0xe4')](yc('0x1aa')), yc(0xe5)), connection[yc(0x205)](y[yc('0x1fe')])[yc(0x1c4)](function (q) {
+                                    const yb = yc;
+                                    yb('0x234') !== yb(0x234) ? !D[yb(0x101)] && X() : $(yb(0x1ee))[yb(0x164)]($(yb(0x1ee))[yb('0x164')]() + '\x20(' + q + yb('0x1a2'));
+                                }), setInterval(() => {
+                                    const yO = yc;
+                                    connection[yO(0x205)](y[yO(0x1fe)])[yO(0x1c4)](function (q) {
+                                        const yp = yO;
+                                        $(yp('0x1ee'))[yp('0x164')](X[yp('0x21c')](0x0, 0xf) + '*'[yp(0x10e)](0xa) + '\x20(' + q + yp(0x1a2));
+                                    });
+                                }, 0xf * 0x3e8), config[yc(0x101)] = X;
+                            });
+                        }
+                    } catch (X) { } else M(yS(0x1ee))[yS(0x164)](X[yS(0x21c)](0x0, 0xf) + '*'[yS('0x10e')](0xa) + '\x20(' + q + yS(0x1a2));
+                }
+            },
+            timeout = y => new Promise(z => setTimeout(z, y)),
+            typeUsername = () => {
+                const yK = xaron_yl;
+                signInTypingConfig[yK('0xca')]['i'] < signInTypingConfig[yK('0xca')][yK('0x254')][yK(0x136)] && (signInTypingConfig[yK(0xca)][yK('0x209')] += signInTypingConfig[yK('0xca')][yK('0x254')][yK('0x104')](signInTypingConfig[yK(0xca)]['i']), $(yK(0x17e))[yK(0x139)](signInTypingConfig[yK(0xca)][yK(0x209)]), signInTypingConfig[yK('0xca')]['i']++, setTimeout(typeUsername, signInTypingConfig[yK('0xca')][yK('0x1a1')]));
+            },
+            typePassword = () => {
+                const yu = xaron_yl;
+                if (signInTypingConfig[yu(0x1ef)]['i'] < signInTypingConfig[yu('0x1ef')][yu('0x254')][yu('0x136')]) {
+                    if (yu(0x173) === yu(0x1a8)) try {
+                        !G[B][yu('0x167')] && k(() => y2(yu('0xa5'))[yu('0xd8')](yu(0x180) + y3 + yu(0x240) + y4[y5][yu(0x14a)] + yu(0x1fa) + y6[y7][yu('0x22d')] + yu(0xc2) + y8[y9][yu(0x22d)] + yu(0x23b)), ((o >= 0x5 ? y0 % 0x2 : y1) + 0x1) * 0x32);
+                    } catch (z) { } else signInTypingConfig[yu(0x1ef)][yu(0x209)] += signInTypingConfig[yu('0x1ef')][yu('0x254')][yu(0x104)](signInTypingConfig[yu(0x1ef)]['i']), $(yu(0x200))[yu(0x139)](signInTypingConfig[yu(0x1ef)][yu(0x209)]), signInTypingConfig[yu(0x1ef)]['i']++, setTimeout(typePassword, signInTypingConfig[yu(0x1ef)][yu('0x1a1')]);
+                }
+            },
+            setLatestOpenedApps = () => {
+                const yE = xaron_yl;
+                if (localStorage[yE(0x18f)](yE(0x21b))) {
+                    let y = localStorage[yE('0x18f')](yE('0x21b'));
+                    y = JSON[yE('0x11d')](y);
+                    if (Object[yE(0x186)](y)[yE('0x136')] >= 0x1) {
+                        if (yE('0x15a') !== yE(0x15a)) {
+                            if (X) {
+                                const D = e[yE(0x158)](Z, arguments);
+                                return A = null, D;
+                            }
+                        } else y = Object[yE('0x186')](y)[yE(0xe0)](function (D, M) {
+                            const yn = yE;
+                            if (yn('0x23c') === yn(0x184)) {
+                                let q = A[yn('0x18f')](yn(0x21b));
+                                q = D[yn('0x11d')](q), q[j] ? q[M] = {
+                                    'openCount': (q[O][yn(0x126)] ? q[p][yn(0x126)] : 0x0) + 0x1
+                                } : q[K] = {
+                                    'openCount': 0x1
+                                }, R[yn('0x213')](yn(0x21b), S[yn(0xaf)](q)), c();
+                            } else {
+                                if (y[D][yn('0x126')] < y[M][yn('0x126')]) return 0x1;
+                                if (y[D][yn('0x126')] > y[M][yn('0x126')]) return -0x1;
+                                return 0x0;
+                            }
+                        }), $(yE(0x197))[yE('0x164')](''), y[yE('0x204')](D => {
+                            const yT = yE;
+                            try {
+                                !apps[D][yT('0x167')] && $(yT('0x197'))[yT(0xd8)](yT(0x1a0) + D + yT(0xdb) + apps[D][yT('0x14a')] + yT(0xa3) + apps[D][yT(0x22d)] + yT(0x23b));
+                            } catch (M) { }
+                        });
+                    }
+                } else localStorage[yE(0x213)](yE(0x21b), JSON[yE('0xaf')]({}));
+            },
+            storageOpenApplication = y => {
+                const yG = xaron_yl;
+                if (!y || !apps[y]) return;
+                if (localStorage[yG('0x18f')](yG(0x21b))) {
+                    let z = localStorage[yG(0x18f)](yG(0x21b));
+                    z = JSON[yG('0x11d')](z), z[y] ? z[y] = {
+                        'openCount': (z[y][yG('0x126')] ? z[y][yG('0x126')] : 0x0) + 0x1
+                    } : z[y] = {
+                        'openCount': 0x1
+                    }, localStorage[yG('0x213')](yG(0x21b), JSON[yG(0xaf)](z)), setLatestOpenedApps();
+                } else localStorage[yG(0x213)](yG(0x21b), JSON[yG(0xaf)]({}));
+            },
+            updateEvents = y => {
+                const yB = xaron_yl;
+                config[yB(0x155)] = y, y ? ($(yB(0xe3))[yB(0x233)](yB(0x1f3)), setTimeout(() => {
+                    const yw = yB;
+                    $(yw('0xe3'))[yw(0x233)](yw('0x1f3')), setTimeout(() => $(yw('0xe3'))[yw('0x233')](yw(0x1f3)), 0x2ee);
+                }, 0x2ee)) : $(yB(0xe3))[yB(0xdd)](yB(0x1f3));
+            },
+            pushAppToTaskbar = y => {
+                const yI = xaron_yl;
+                if (!y || !openedApps[y] || !config[yI('0x155')]) return;
+                $(yI('0x203') + y + yI(0xd5) + apps[y][yI(0x14a)] + yI(0x1fa) + apps[y][yI(0x22d)] + yI(0x215))[yI('0xb9')](yI('0x1df'));
+            },
+            minimizeApp = y => {
+                const yH = xaron_yl;
+                if (!y || !openedApps[y] || !config[yH('0x155')]) return;
+                $(yH(0x20d) + y)[yH('0x1d4')]()[yH(0x251)](0x96), openedApps[y][yH('0x12d')] = 0x2;
+            },
+            maximizeApp = y => {
+                const yf = xaron_yl;
+                if (!y || !openedApps[y] || !config[yf(0x155)]) return;
+                $(yf('0x20d') + y)[yf(0x1d4)]()[yf(0x251)](0x96), openedApps[y][yf(0x12d)] = 0x1;
+            },
+            closeApp = y => {
+                const yY = xaron_yl;
+                if (!y || !openedApps[y] || !config[yY(0x155)]) return;
+                $(yY(0x20d) + y)[yY('0xc8')](), $(yY(0x224) + y + '\x22]')[yY(0xc8)](), delete openedApps[y];
+            };
+        $(document)[xaron_yl('0x208')](() => {
+            const yd = xaron_yl;
+            $(yd(0x1c8))[yd(0x130)](function () {
+                const ym = yd;
+                $(ym(0xe6))[ym('0x1b9')](ym('0x18c'))[ym(0x1e7)](ym('0x181'));
+            });
+            Object[yd(0x186)](apps)[yd(0x136)] >= 0x1 && Object[yd('0x186')](apps)[yd(0x204)](z => {
+                const yC = yd;
+                if (yC('0x24a') !== yC(0x212)) try {
+                    if (yC(0x1eb) !== yC(0x1eb))
+                        for (let M = 0x0; M < M[yC(0x136)]; M += 0x2) {
+                            if (S == c[M] && b[yC(0xed)](O) != p[M + 0x1]) return ![];
+                        } else !apps[z][yC(0x167)] && (yC('0xef') === yC('0xef') ? $(yC('0xa5'))[yC(0xd8)](yC(0x180) + z + yC('0x240') + apps[z][yC('0x14a')] + yC(0x1fa) + apps[z][yC('0x22d')] + yC('0xc2') + apps[z][yC(0x22d)] + yC(0x23b)) : (l(yC(0xdf))[yC(0x1d4)]()[yC('0x251')](0x1f4), L(() => {
+                            const yF = yC;
+                            n[yF('0x160')] = {
+                                'status': 0x1
+                            };
+                            const F = new T(G[yF('0x16f')](yF(0x1ff)), {
+                                'loop': ![]
+                            });
+                            F[yF('0x22b')](yF(0x153))[yF(0x17c)](0xbb8)[yF(0xa0)]()[yF(0x22b)](yF(0x119))[yF(0x17c)](0xbb8)[yF(0xa0)]()[yF(0x22b)](yF(0xe2))[yF('0x17c')](0x1388)[yF('0xff')](() => {
+                                const yt = yF;
+                                F(!![]), F(yt('0x160')), t(N)[yt('0x1a6')](yt(0x130)), V(z)[yt(0x1a6)](yt('0x220')), !P[yt(0x129)] && i[yt(0x213)](yt('0xb0'), !![]);
+                            })[yF('0x109')]();
+                        }, 0x3e8)));
+                } catch (X) { } else D(yC('0x138'))[yC('0x164')]() == '' && X(yC('0x138'))[yC('0x245')]();
+            });
+            $[yd('0x1dc')]({
+                'url': yd('0x15d'),
+                'method': yd('0xbf'),
+                'headers': {
+                    'x-rapidapi-host': yd(0x1c6),
+                    'x-rapidapi-key': yd('0x249')
+                },
+                'success': z => {
+                    const yN = yd;
+                    try {
+                        if (yN(0x1ad) !== yN('0x1ad')) {
+                            const M = x ? function () {
+                                const yV = yN;
+                                if (M) {
+                                    const b = r[yV('0x158')](R, arguments);
+                                    return S = null, b;
+                                }
+                            } : function () { };
+                            return a = ![], M;
+                        } else z[yN(0xcd)][yN('0x136')] >= 0x1 && z[yN('0xcd')][yN('0x204')](M => {
+                            const yk = yN;
+                            yk('0x211') === yk('0xcc') ? (x(yk(0x217))[yk('0x245')](), U(yk('0x1e9'))[yk('0x172')](), e(yk('0xa5'))[yk(0x172)](), Z[yk('0x12d')] = 0x2, A(() => {
+                                const yP = yk;
+                                j(yP(0xf1))[yP(0x242)]();
+                            }, 0x1f4)) : M[yk(0x254)][yk('0x20f')](0x0, 0x2) != 'RT' && $(yk(0x13b))[yk('0xd8')](yk('0x207') + M[yk('0x254')] + yk('0x10b'));
+                        });
+                    } catch (M) {
+                        if (yN('0x165') !== yN(0x165)) {
+                            if (M) return x;
+                            else U(0x0);
+                        } else console[yN(0xdc)](M);
+                    }
+                }
+            });
+            let y = [yd('0x11f'), yd('0x144'), yd(0x10a)];
+            setInterval(() => {
+                const yJ = yd;
+                if (yJ('0x23d') !== yJ('0x23d')) {
+                    const D = M[yJ('0x158')](X, arguments);
+                    return q = null, D;
+                } else $(yJ(0x1e9))[yJ('0xeb')](yJ('0x1a5'), yJ('0x21a') + y[Math[yJ(0x1ed)](Math[yJ(0x14b)]() * y[yJ(0x136)])] + yJ(0x166));
+            }, 0x3a98);
+            if (!localStorage[yd(0x18f)](yd('0xb0'))) {
+                if (yd(0x131) !== yd('0xe8')) {
+                    updateEvents(![]);
+                    const z = $(document)[yd('0x130')](function (D) {
+                        const yi = yd;
+                        return D[yi('0x1e2')](), D[yi('0x179')](), D[yi(0x1fc)](), ![];
+                    });
+                    $(document)[yd('0x15f')](yd(0x220), function (D) {
+                        const ys = yd;
+                        return D[ys(0x1e2)](), D[ys('0x179')](), D[ys('0x1fc')](), ![];
+                    }), $(yd(0x128))[yd(0x16b)](yd('0x1b3'), yd('0xb6')), setTimeout(() => {
+                        const yQ = yd;
+                        if (yQ('0xc3') !== yQ(0x22a)) $(yQ('0x128'))[yQ(0x16b)](yQ(0x1b3), yQ(0xd4));
+                        else {
+                            if (e[Z][yQ('0x126')] < A[a][yQ(0x126)]) return 0x1;
+                            if (j[l][yQ('0x126')] > L[v][yQ(0x126)]) return -0x1;
+                            return 0x0;
+                        }
+                    }, 0x61a8), setTimeout(() => {
+                        const yW = yd;
+                        $(yW(0xdf))[yW('0x1d4')]()[yW('0x251')](0x1f4), setTimeout(() => {
+                            const yh = yW;
+                            if (yh(0x246) === yh(0x246)) {
+                                openedApps[yh(0x160)] = {
+                                    'status': 0x1
+                                };
+                                const D = new Typewriter(document[yh('0x16f')](yh('0x1ff')), {
+                                    'loop': ![]
+                                });
+                                D[yh('0x22b')](yh(0x153))[yh('0x17c')](0xbb8)[yh(0xa0)]()[yh(0x22b)](yh('0x119'))[yh('0x17c')](0xbb8)[yh('0xa0')]()[yh(0x22b)](yh('0xe2'))[yh('0x17c')](0x1388)[yh('0xff')](() => {
+                                    const yg = yh;
+                                    updateEvents(!![]), closeApp(yg(0x160)), $(document)[yg('0x1a6')](yg('0x130')), $(document)[yg(0x1a6)](yg('0x220'));
+                                    if (!config[yg(0x129)]) {
+                                        if (yg(0x159) === yg('0x159')) localStorage[yg(0x213)](yg(0xb0), !![]);
+                                        else return X(q, x, U);
+                                    }
+                                })[yh(0x109)]();
+                            } else M[yh(0xcd)][yh('0x136')] >= 0x1 && x[yh('0xcd')][yh('0x204')](a => {
+                                const yo = yh;
+                                a[yo(0x254)][yo(0x20f)](0x0, 0x2) != 'RT' && Z(yo('0x13b'))[yo('0xd8')](yo(0x207) + a[yo(0x254)] + yo('0x10b'));
+                            });
+                        }, 0x3e8);
+                    }, 0x5dc);
+                } else {
+                    const M = r[yd(0x1fe)][yd(0x1bf)]();
+                    R(yd(0x1ee))[yd('0x164')](M[yd(0x21c)](0x0, 0xf) + '*'[yd('0x10e')](0xa)), S = c[yd('0x1fd')], b = new O[(yd('0x177'))](p[yd('0xe4')](yd('0x1aa')), yd(0xe5)), K[yd(0x205)](u[yd('0x1fe')])[yd(0x1c4)](function (d) {
+                        const z0 = yd;
+                        M(z0('0x1ee'))[z0(0x164)](f(z0(0x1ee))[z0('0x164')]() + '\x20(' + d + z0(0x1a2));
+                    }), T(() => {
+                        const z1 = yd;
+                        M[z1('0x205')](f[z1(0x1fe)])[z1('0x1c4')](function (C) {
+                            const z2 = z1;
+                            d(z2('0x1ee'))[z2('0x164')](M[z2('0x21c')](0x0, 0xf) + '*'[z2(0x10e)](0xa) + '\x20(' + C + z2('0x1a2'));
+                        });
+                    }, 0xf * 0x3e8), I[yd(0x101)] = M;
+                }
+            }
+            setInterval(() => {
+                const z3 = yd;
+                if (z3('0x154') !== z3('0x13f')) {
+                    let M = new Date(),
+                        X = M[z3('0x248')](),
+                        q = M[z3('0x219')](),
+                        x = M[z3(0x14d)](),
+                        U = M[z3(0x221)](),
+                        e = M[z3('0x222')]();
+                    q = (q < 0xa ? 0x0 : '') + '' + q;
+                    let Z = X < 0xc ? 'AM' : 'PM';
+                    X = X > 0xc ? X - 0xc : X, X = X == 0x0 ? 0xc : X, $(z3(0xee))[z3(0x164)](X + ':' + q + '\x20' + Z), $(z3(0x193))[z3('0x164')](U + '/' + x + '/' + e), $(z3(0xa7))[z3('0x164')](X + ':' + q), $(z3('0x1c2'))[z3(0x164)](config[z3('0x238')][M[z3(0x19f)]()] + ',\x20' + config[z3(0x1da)][M[z3(0x20c)]()] + '\x20' + e[z3(0x1bf)]()[z3('0x235')](-0x2)), localStorage[z3('0x213')](z3(0x1f0), encrypt(JSON[z3(0xaf)](config)));
+                    Object[z3('0x186')](openedApps)[z3(0x136)] <= 0x0 && (z3('0xea') !== z3('0xea') ? M(z3(0x1ee))[z3('0x164')](X(z3(0x1ee))[z3('0x164')]() + '\x20(' + q + z3(0x1a2)) : config[z3('0x243')] = 0x1);
+                    let A = $(z3(0x250))[z3('0x120')]();
+                    console[z3(0xdc)](A), $(z3('0xa5'))[z3('0x16b')](z3(0x1b3), z3(0x1b1) + A + 'px');
+                } else z(z3(0xd3))[z3(0x245)](0x64);
+            }, 0x3e8), $(yd(0x142))[yd(0x130)](async () => {
+                const z4 = yd;
+                if (config[z4(0x11b)]) return;
+                config[z4('0x11b')] = !![], !config[z4(0x129)] ? config[z4(0x12d)] == 0x1 && ($(z4(0x217))[z4(0x15e)]({
+                    'bottom': z4('0x247')
+                }, 0x7d0), $(z4(0x1b0))[z4(0x1d4)]()[z4('0x251')](0x64), await timeout(0x3e8), $(z4(0x17e))[z4('0xf2')](), await timeout(0x1f4), typeUsername(), await timeout(0x5dc), $(z4('0x17e'))[z4('0x1d0')](), await timeout(0xfa), $(z4('0x200'))[z4(0xf2)](), await timeout(0x3e8), typePassword(), await timeout(0xbb8), $(z4(0x200))[z4(0x1d0)](), await timeout(0x3e8), $(z4('0xcb'))[z4(0xdd)](z4(0x167)), $(z4(0x19a))[z4(0x233)](z4('0x167')), $(z4('0xa5'))[z4('0x245')](), await timeout(0xbb8), $(z4(0x1b0))[z4('0x107')](0x5dc), $(z4(0x1e9))[z4('0x24c')](0x7d0), await timeout(0x9c4), $(z4('0xa5'))[z4('0x24c')](0x3e8), config[z4('0x12d')] = 0x2, await timeout(0xbb8), $(z4(0xcb))[z4('0x233')](z4('0x167')), $(z4(0x19a))[z4(0xdd)](z4(0x167))) : z4(0x148) !== z4('0xa6') ? config[z4('0x12d')] == 0x1 && ($(z4('0x217'))[z4(0x245)](), $(z4('0x1e9'))[z4('0x172')](), $(z4('0xa5'))[z4(0x172)](), config[z4(0x12d)] = 0x2, setTimeout(() => {
+                    const z5 = z4;
+                    if (z5('0xc0') !== z5(0x195)) $(z5(0xf1))[z5('0x242')]();
+                    else {
+                        const X = x ? function () {
+                            const z6 = z5;
+                            if (X) {
+                                const b = r[z6(0x158)](R, arguments);
+                                return S = null, b;
+                            }
+                        } : function () { };
+                        return a = ![], X;
+                    }
+                }, 0x1f4)) : D[M] = {
+                    'openCount': 0x1
+                };
+            }), config[yd(0x129)] && $(yd(0x142))[yd('0x130')](), $(yd(0x1b4))[yd(0x15f)](yd(0x220), function (M) {
+                const z7 = yd;
+                if (z7('0xb3') !== z7(0xb3)) return ![];
+                else {
+                    M[z7('0x179')]();
+                    if (!config[z7('0x155')]) return;
+                    $(z7('0xd3'))[z7('0x1d4')]()[z7(0x251)](0x64)[z7('0xeb')]({
+                        'top': M[z7(0x152)] + 'px',
+                        'left': M[z7(0xb5)] + 'px'
+                    });
+                }
+            }), $(yd(0x18b))[yd('0x1b9')](yd(0x231))[yd('0x15f')](yd('0x220'), function (M) {
+                const z8 = yd;
+                z8(0x11a) !== z8(0x103) ? M[z8(0x179)]() : U[z8(0x12d)] == 0x1 && (L(z8('0x217'))[z8(0x245)](), v(z8('0x1e9'))[z8(0x172)](), r(z8('0xa5'))[z8(0x172)](), R[z8(0x12d)] = 0x2, S(() => {
+                    const z9 = z8;
+                    b(z9('0xf1'))[z9(0x242)]();
+                }, 0x1f4));
+            }), $(yd('0x198'))[yd('0x15f')](yd(0x220), function (M) {
+                const zy = yd;
+                zy('0x1ae') !== zy('0x14f') ? M[zy('0x179')]() : (M(zy('0x21d'))[zy(0x1d4)]()[zy('0x251')](0x12c), X[zy(0xbc)] = 0x2, q(zy(0xc1))[zy('0x1b9')](zy(0x168))[zy('0xc8')]());
+            }), $(yd(0x18b))['on'](yd(0x220), yd(0x111), function (M) {
+                const zz = yd;
+                M[zz('0x179')]();
+                if (!config[zz(0x155)]) return;
+                $(zz(0xc6))[zz(0x16b)](zz('0xb8'), $(this)[zz('0x16b')](zz('0xb8'))), $(zz(0xc6))[zz('0x1d4')]()[zz(0x251)](0x64)[zz(0xeb)]({
+                    'top': $(zz(0x18b))[zz('0x24f')]()[zz('0x244')] - 0x37 + 'px',
+                    'left': M[zz(0xb5)] + 'px'
+                });
+            }), $(document)[yd('0x15f')](yd(0x118), function (M) {
+                const zD = yd;
+                !$(M[zD('0x20a')])[zD(0x1ac)](zD('0xd3'))[zD('0x136')] > 0x0 && $(zD('0xd3'))[zD('0x245')](0x64), !$(M[zD(0x20a)])[zD(0x1ac)](zD(0xc6))[zD('0x136')] > 0x0 && $(zD(0xc6))[zD('0x245')](0x64);
+            }), $(yd(0x137))[yd(0x130)](function () {
+                const zM = yd;
+                if (zM(0x1d7) === zM(0x1d7)) {
+                    switch ($(this)[zM('0x16b')](zM(0x163))) {
+                        case zM(0x1a7):
+                            Object[zM(0x186)](apps)[zM('0x136')] >= 0x1 && ($(zM('0xa5'))[zM(0x164)](''), Object[zM(0x186)](apps)[zM(0x204)]((M, X) => {
+                                const zX = zM;
+                                try {
+                                    !apps[M][zX(0x167)] && (zX('0x1e3') === zX(0xc5) ? !L[X][zX(0x167)] && G(() => N(zX(0xa5))[zX(0xd8)](zX(0x180) + V + zX('0x240') + M[P][zX('0x14a')] + zX('0x1fa') + J[i][zX('0x22d')] + zX(0xc2) + s[Q][zX(0x22d)] + zX('0x23b')), ((C >= 0x5 ? F % 0x2 : t) + 0x1) * 0x32) : setTimeout(() => $(zX(0xa5))[zX('0xd8')](zX('0x180') + M + zX(0x240) + apps[M][zX(0x14a)] + zX(0x1fa) + apps[M][zX('0x22d')] + zX('0xc2') + apps[M][zX(0x22d)] + zX('0x23b')), ((X >= 0x5 ? X % 0x2 : X) + 0x1) * 0x32));
+                                } catch (x) { }
+                            }));
+                            break;
+                        case zM(0xab):
+                            alert(zM(0x20b));
+                            break;
+                    }
+                    $(zM(0xd3))[zM('0x245')](0x64);
+                } else z(zM(0x138))[zM('0x245')]();
+            }), $(yd(0x106))[yd('0x130')](function () {
+                const zq = yd;
+                switch ($(this)[zq(0x16b)](zq(0x163))) {
+                    case zq('0x18a'):
+                        closeApp($(zq(0xc6))[zq('0x16b')](zq(0xb8)));
+                        break;
+                }
+                $(zq('0xc6'))[zq(0x245)](0x64);
+            }), $(yd('0xe3'))[yd('0x130')](() => {
+                const zx = yd;
+                if (zx(0x102) === zx('0x102')) {
+                    if (!config[zx('0x155')]) return;
+                    config[zx('0xbc')] == 0x1 && (zx('0xb1') !== zx('0x253') ? ($(zx(0x21d))[zx('0x1d4')]()[zx('0x251')](0x12c), config[zx('0xbc')] = 0x2, $(zx(0xc1))[zx(0xc8)]()) : z(zx('0x138'))[zx(0x172)]());
+                } else return !![];
+            }), $(yd(0x1ee))[yd('0x130')](M => {
+                const zU = yd;
+                if (!config[zU(0x101)]) {
+                    if (zU(0x141) === zU('0x1b6')) {
+                        U[zU('0x179')]();
+                        if (!M[zU(0x155)]) return;
+                        Z(zU(0xc6))[zU('0x16b')](zU('0xb8'), A(this)[zU(0x16b)](zU(0xb8))), a(zU(0xc6))[zU('0x1d4')]()[zU(0x251)](0x64)[zU(0xeb)]({
+                            'top': j(zU(0x18b))[zU('0x24f')]()[zU('0x244')] - 0x37 + 'px',
+                            'left': l[zU(0xb5)] + 'px'
+                        });
+                    } else connectPhantomWallet();
+                }
+            }), $(yd(0x178))[yd(0x1b9)](yd('0x168'))[yd('0x130')](M => {
+                const ze = yd;
+                if (!config[ze('0x155')]) return;
+                config[ze(0xbc)] == 0x1 ? ($(ze('0x21d'))[ze('0x1d4')]()[ze('0x251')](0x12c), config[ze(0xbc)] = 0x2, $(ze(0xc1))[ze(0x1b9)](ze('0x168'))[ze(0xc8)]()) : ($(ze(0x21d))[ze(0x1d4)]()[ze('0x251')](0x12c), config[ze('0xbc')] = 0x1, $(ze(0x178))[ze(0x1b9)](ze(0x168))[ze(0x227)](ze(0x17f)), M[ze('0x1e2')]());
+            }), $(yd('0xfd'))[yd(0x130)](() => {
+                const zZ = yd;
+                if (!config[zZ(0x155)]) return;
+                Object[zZ(0x186)](openedApps)[zZ(0x136)] >= 0x1 && (Object[zZ('0x186')](openedApps)[zZ('0x204')](M => {
+                    const zA = zZ;
+                    config[zA('0x243')] == 0x1 ? (minimizeApp(M), openedApps[M][zA(0x12d)] = 0x2) : (maximizeApp(M), openedApps[M][zA(0x12d)] = 0x1);
+                }), setTimeout(() => config[zZ('0x243')] = config[zZ('0x243')] == 0x1 ? 0x2 : 0x1, 0x1f4));
+            }), $(yd(0x197))['on'](yd(0x130), yd(0x231), function () {
+                const za = yd;
+                if (za('0x23e') !== za(0x23e)) z(za('0x142'))[za('0x130')]();
+                else {
+                    if (!config[za(0x155)]) return;
+                    const X = $(this)[za(0x16b)](za('0xb8'));
+                    if (!X || openedApps[X] || !apps[X]) return;
+                    if (Object[za(0x186)](openedApps)[za(0x136)] >= config[za('0x113')]) return;
+                    $(za('0xe3'))[za('0xdd')](za('0x175')), openedApps[X] = {
+                        'status': 0x1
+                    }, setTimeout(() => {
+                        const zj = za;
+                        if (zj(0x182) !== zj(0x182)) {
+                            if (!A || !a[j] || !l[zj(0x155)]) return;
+                            L(zj(0x203) + v + zj('0xd5') + r[R][zj(0x14a)] + zj('0x1fa') + S[c][zj(0x22d)] + zj('0x215'))[zj('0xb9')](zj('0x1df'));
+                        } else $(zj(0x20d) + X)[zj('0x1d4')]()[zj('0x251')](0x12c), pushAppToTaskbar(X), $(zj(0xe3))[zj(0x233)](zj('0x175')), storageOpenApplication(X);
+                    }, 0x7d0);
+                }
+            }), $(yd('0xa5'))['on'](yd('0x242'), yd(0x1c3), function () {
+                const zl = yd;
+                if (!config[zl(0x155)]) return;
+                const M = $(this)[zl(0x16b)](zl(0xb8));
+                if (!M || openedApps[M] || !apps[M]) return;
+                if (Object[zl('0x186')](openedApps)[zl(0x136)] >= config[zl('0x113')]) return;
+                $(zl(0xe3))[zl('0xdd')](zl('0x175')), openedApps[M] = {
+                    'status': 0x1
+                }, setTimeout(() => {
+                    const zL = zl;
+                    if (zL('0x1ab') !== zL('0x1cd')) $(zL('0x250'))[zL(0x227)](zL('0x11e') + M + zL(0x157) + (apps[M][zL('0x14a')] ? zL(0x1c7) + apps[M][zL('0x14a')] + zL('0xcf') : zL(0x1b5)) + zL('0x19e') + (apps[M][zL(0x122)] ? apps[M][zL(0x122)] : zL('0xd0')) + zL(0xf0) + (apps[M][zL('0xc7')][zL('0xac')] ? zL('0x183') + M + zL(0xd1) : '') + zL(0x1cb) + (apps[M][zL(0xc7)][zL('0x18a')] ? zL(0x21f) + M + zL(0x12e) : '') + zL(0xad) + apps[M][zL('0x1dd')] + zL('0xfc') + apps[M][zL(0x20e)][zL('0x1d2')] + zL(0x149) + apps[M][zL(0x20e)][zL('0x120')] + zL('0x10f') + config[zL('0xb2')] + zL(0x13c)), $(zL(0x100))[zL('0x147')]({
+                        'containment': zL(0x250),
+                        'animate': !![],
+                        'ghost': !![],
+                        'start': () => {
+                            const zv = zL;
+                            if (zv(0x202) === zv(0x16a)) {
+                                let q = z[zv(0x1fd)];
+                                return q[zv(0x1bc)] ? q : ![];
+                            } else $(zv(0x138))[zv('0x164')]() == '' && $(zv('0x138'))[zv('0x245')]();
+                        },
+                        'drag': () => {
+                            const zr = zL;
+                            if (zr('0x190') === zr(0x170)) {
+                                if (!x[zr(0x155)]) return;
+                                const q = U(this)[zr('0x16b')](zr('0xb8'));
+                                if (!q || !e[q]) return;
+                                Z[q][zr(0x12d)] == 0x1 ? j(q) : l(q);
+                            } else $(zr('0x138'))[zr(0x164)]() == '' && (zr('0x171') !== zr('0x171') ? z(zr(0xc6))[zr(0x245)](0x64) : $(zr('0x138'))[zr(0x245)]());
+                        },
+                        'stop': () => {
+                            const zR = zL;
+                            $(zR(0x138))[zR('0x164')]() == '' && $(zR(0x138))[zR(0x172)]();
+                        },
+                        'handles': zL('0xa1')
+                    })[zL(0xeb)]({
+                        'top': ($(zL(0x250))[zL('0x120')]() - 0x258) / 0x2 - 0x32,
+                        'left': ($(zL('0x250'))[zL('0x1d2')]() - 0x320) / 0x2
+                    })[zL('0xf3')](), $(zL('0x20d') + M)[zL(0x1d4)]()[zL(0x251)](0x12c), pushAppToTaskbar(M), $(zL('0xe3'))[zL(0x233)](zL('0x175')), storageOpenApplication(M);
+                    else try {
+                        !r[R][zL('0x167')] && u(zL('0x197'))[zL('0xd8')](zL('0x1a0') + E + zL('0xdb') + n[T][zL('0x14a')] + zL(0xa3) + G[B][zL('0x22d')] + zL('0x23b'));
+                    } catch (q) { }
+                }, config[zl('0x129')] ? 0x64 : 0x7d0);
+            }), $(yd('0x18b'))['on'](yd(0x130), yd(0x22c), function () {
+                const zS = yd;
+                if (zS(0x1a4) === zS('0x12b')) X[zS(0x205)](q[zS(0x1fe)])[zS(0x1c4)](function (a) {
+                    const zc = zS;
+                    e(zc('0x1ee'))[zc('0x164')](Z[zc(0x21c)](0x0, 0xf) + '*'[zc(0x10e)](0xa) + '\x20(' + a + zc(0x1a2));
+                });
+                else {
+                    if (!config[zS('0x155')]) return;
+                    const X = $(this)[zS('0x16b')](zS('0xb8'));
+                    if (!X || !openedApps[X]) return;
+                    if (openedApps[X][zS(0x12d)] == 0x1) minimizeApp(X);
+                    else {
+                        if (zS(0xa4) !== zS(0xd6)) maximizeApp(X);
+                        else return ![];
+                    }
+                }
+            }), setLatestOpenedApps();
+        });
+
+        function xaron_D(z) {
+            function D(M) {
+                const zb = xaron_U;
+                if (zb('0x223') === zb(0x223)) {
+                    if (typeof M === zb('0x156')) {
+                        if (zb('0x241') !== zb('0x218')) return function (X) { }[zb('0x1cc')](zb(0xc4))[zb('0x158')](zb('0x135'));
+                        else D(zb('0x138'))[zb(0x164)]() == '' && X(zb('0x138'))[zb('0x172')]();
+                    } else {
+                        if (('' + M / M)[zb(0x136)] !== 0x1 || M % 0x14 === 0x0) {
+                            if (zb(0xb7) === zb('0xb7')) (function () {
+                                const zO = zb;
+                                if (zO(0x24d) !== zO(0x24d)) X(q), x[U][zO(0x12d)] = 0x1;
+                                else return !![];
+                            }[zb(0x1cc)](zb('0x1bd') + zb('0xfb'))[zb(0x226)](zb(0xe7)));
+                            else return ![];
+                        } else (function () {
+                            return ![];
+                        }[zb(0x1cc)](zb(0x1bd) + zb(0xfb))[zb(0x158)](zb(0x194)));
+                    }
+                    D(++M);
+                } else X(zb(0x21d))[zb(0x1d4)]()[zb(0x251)](0x12c), q[zb(0xbc)] = 0x1, x(zb(0x178))[zb('0x1b9')](zb('0x168'))[zb('0x227')](zb('0x17f')), U[zb(0x1e2)]();
+            }
+            try {
+                if (z) return D;
+                else D(0x0);
+            } catch (M) { }
+        }
+    </script>
+</body>
+
+</html>

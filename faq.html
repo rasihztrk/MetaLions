@@ -1,0 +1,174 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+</style>
+<link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet"
+    type="text/css" />
+<link rel="stylesheet" href="./dist/app.css">
+<style>
+    body {
+        overflow: scroll !important;
+        height: 100% !important;
+        position: relative;
+    }
+
+    @import url('https://fonts.googleapis.com/css?family=Raleway');
+
+    body {
+        background-image: url('./assets/images/bgComing.png');
+        font-family: 'Raleway', sans-serif;
+        overflow-x: hidden;
+    }
+
+    .faq-header {
+        font-size: 42px;
+        border-bottom: 1px dotted #ccc;
+        padding: 24px;
+        color: white !important;
+    }
+
+    .faq-content {
+        margin: 0 auto;
+    }
+
+    .faq-question {
+        padding: 20px 0;
+        border-bottom: 1px dotted #ccc;
+    }
+
+    .panel-title {
+        font-size: 24px;
+        width: 100%;
+        position: relative;
+        margin: 0;
+        padding: 10px 10px 0 48px;
+        display: block;
+        cursor: pointer;
+        color: white !important;
+    }
+
+    .panel-content {
+        font-size: 20px;
+        padding: 0px 14px;
+        margin: 0 40px;
+        height: 0;
+        overflow: hidden;
+        z-index: -1;
+        position: relative;
+        opacity: 0;
+        -webkit-transition: .4s ease;
+        -moz-transition: .4s ease;
+        -o-transition: .4s ease;
+        transition: .4s ease;
+    }
+
+    .panel:checked~.panel-content {
+        height: auto;
+        opacity: 1;
+        padding: 14px;
+        color: white !important;
+    }
+
+    .plus {
+        position: absolute;
+        margin-left: 20px;
+        margin-top: 4px;
+        z-index: 5;
+        font-size: 42px;
+        line-height: 100%;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        -webkit-transition: .2s ease;
+        -moz-transition: .2s ease;
+        -o-transition: .2s ease;
+        transition: .2s ease;
+        color: white !important;
+    }
+
+    .panel:checked~.plus {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    .panel {
+        display: none;
+    }
+
+
+    @media only screen and (max-width: 768px) {
+
+        body {
+            background-size: 100% 140%;
+        }
+    }
+
+    @media only screen and (max-width: 576px) {
+
+        .faq-header {
+            font-size: 28px !important;
+        }
+    }
+</style>
+<div class="faq">
+    <div class="faq-header">Frequently Asked Questions</div>
+
+    <div class="faq-content">
+        <div class="faq-question">
+            <input id="q1" type="checkbox" class="panel">
+            <div class="plus">+</div>
+            <label for="q1" class="panel-title">METALIONS NFT?</label>
+            <div class="panel-content">MetaLions NFT is a collection of 5000 detailed and custom-designed Lions, that
+                are willing to contribute to a supreme cause of the NFT world, which is combining the real-life with
+                NFTs.</div>
+        </div>
+
+        <div class="faq-question">
+            <input id="q2" type="checkbox" class="panel">
+            <div class="plus">+</div>
+            <label for="q2" class="panel-title">WHEN IS THE LAUNCH DATE?</label>
+            <div class="panel-content">Launch date will be announced on our social media accounts and Discord server.
+            </div>
+        </div>
+        <div class="faq-question">
+            <input id="q3" type="checkbox" class="panel">
+            <div class="plus">+</div>
+            <label for="q3" class="panel-title">HOW CAN I GET WHITELISTED?</label>
+            <div class="panel-content">1- Write “| MetaLions” to your name<br>
+                2- Change your profile picture from a sneak peek<br>
+                3- Have a minimum of 5 real invites<br>
+                4- Alpha's do not need to meet the invite requirement, but they do need to be active in chat and fulfill
+                clauses 1 and 2.<br>
+                5- We will be choosing from our active members for the whitelist. Keep in mind that whitelist is
+                limited.<br>
+                Fulfilling these requirements won't guarantee a whitelist spot, however it will increase your chances to
+                get whitelisted.
+            </div>
+        </div>
+        <div class="faq-question">
+            <input id="q4" type="checkbox" class="panel">
+            <div class="plus">+</div>
+            <label for="q4" class="panel-title">HOW MANY METALIONS WILL BE CREATED?</label>
+            <div class="panel-content">5000</div>
+        </div>
+        <div class="faq-question">
+            <input id="q5" type="checkbox" class="panel">
+            <div class="plus">+</div>
+            <label for="q5" class="panel-title">WHAT IS THE LION'S SHARE CLUB?</label>
+            <div class="panel-content">TLSC is a private group with some requirements to join. It is also a place where
+                we will appreciate our holders with some privileges.
+            </div>
+        </div>
+        <div class="faq-question">
+            <input id="q6" type="checkbox" class="panel">
+            <div class="plus">+</div>
+            <label for="q6" class="panel-title">HOW DO I BECOME A MEMBER OF THE LION'S SHARE CLUB?</label>
+            <div class="panel-content">The indicator of being a part of this community will be acquiring a Silver or
+                Gold VIP Card. These requirements are mainly to assess the value of being a member of this club.
+                Specifically, the requirement of getting a Silver VIP Card is by exchanging it with 3 MetaLions, and
+                similarly, to acquire a Gold VIP Card is to burn 5 MetaLions.</div>
+        </div>
+    </div>

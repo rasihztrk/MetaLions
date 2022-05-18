@@ -1,0 +1,118 @@
+/* .bg-mask {
+    height: 100%;
+    width: 100%;
+    z-index: 13;
+    right: auto;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+} */
+
+.windows iframe,
+.windows .content,
+.windows .application{
+    padding: 0px 0px !important;
+} 
+.windows #welcome .content{
+    min-width: unset !important;
+    min-height: unset !important;
+}
+
+.programs{
+    row-gap: 1.5rem !important;
+}
+
+#roadmap iframe{
+}
+
+.task.startMenuBtn {
+    padding: unset !important;
+}
+
+#merch .content {
+    background: #1f2937 !important;
+    height: 100% !important;
+} 
+
+.desktop .taskbar .task:not(.date):not(.wallet){
+    padding: 0.5rem;
+}
+
+.menu {
+    position: fixed;
+    /* right: 37rem; */
+    left: 50%;
+    bottom: 10px;
+    z-index: 1;
+    display: flex;
+    height: 65px;
+    width: 65px;
+    width: -moz-fit-content;
+    cursor: pointer;
+    padding-right: 1.5rem;
+  }
+  .menu span {
+    position: fixed;
+    background-color: #1f2937;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid white;
+  }
+
+  .menu span.hidden {
+    visibility: hidden;
+  }
+
+  .menu span:last-child {
+    padding: 13px 15px;
+  }
+
+  .menu span:nth-child(1) {
+    background-color: #1f2937;
+    border: 1px solid white;
+  }
+  .menu span:nth-child(1).show {
+    transform: rotate(190deg) translate(100px) rotate(170deg);
+  }
+
+  .menu span:nth-child(2) {
+    background-color: #1f2937;
+    border: 1px solid white;
+  }
+
+  .menu span:nth-child(2).show {
+    transform: rotate(233deg) translate(100px) rotate(127deg);
+  }
+
+  .menu span:nth-child(3) {
+    background-color: #1f2937;
+    border: 1px solid white;
+  }
+
+  .menu span:nth-child(3).show {
+    transform: rotate(271deg) translate(100px) rotate(89deg);
+  }
+
+  .menu span:nth-child(4) {
+    background-color: #1f2937;
+    border: 1px solid white;
+  }
+
+  .menu span:nth-child(4).show {
+    transform: rotate(309deg) translate(100px) rotate(51deg);
+  }
+
+  .menu span:nth-child(5) {
+    background-color: #1f2937;
+    border: 1px solid white;
+  }
+
+  .menu span:nth-child(5).show {
+    transform: rotate(351deg) translate(100px) rotate(9deg);
+  }
+  

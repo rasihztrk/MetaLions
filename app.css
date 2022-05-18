@@ -1,0 +1,322 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    font-family: "Open Sans Condensed", sans-serif;
+    @apply overflow-hidden;
+  }
+
+  /* Lock Screen Start */
+  .lock {
+    @apply absolute z-[100] w-screen h-screen bg-[url(https://cdn.discordapp.com/attachments/823126934157787167/937378934490812436/bg.jpg)] bg-center bg-no-repeat bg-cover text-white;
+  }
+  .lock .box {
+    @apply flex flex-col absolute bottom-40 left-40 select-none;
+  }
+  .lock .box .clock {
+    @apply text-[165px];
+  }
+  .lock .box .date {
+    @apply text-[80px];
+  }
+  /* Lock Screen End */
+
+  /* Sign In Screen Start */
+
+  .signin {
+    @apply absolute w-screen h-screen bg-[url(https://cdn.discordapp.com/attachments/823126934157787167/937378934490812436/bg.jpg)] bg-center bg-no-repeat bg-cover text-white;
+  }
+  .signin .box {
+    @apply flex flex-col justify-center items-center h-screen select-none;
+  }
+  .signin .avatar img {
+    @apply rounded-full w-80 h-80 shadow-xl;
+  }
+  .signin .user {
+    @apply text-[64px] pt-8 pb-8 font-bold;
+  }
+  .signin .inputs {
+    @apply flex flex-col gap-y-3;
+  }
+  .signin .inputs input {
+    @apply block w-96 p-3 mt-2 text-gray-300 focus:text-gray-100 appearance-none focus:outline-none bg-transparent border-2 bg-gray-800 border-gray-600 focus:bg-gray-600 focus:shadow-inner transition-all duration-500;
+  }
+  .signin .inputs .action .sign {
+    @apply pt-[26px] relative right-8 text-white opacity-75 hover:opacity-100 cursor-pointer transition-all duration-300;
+  }
+  .signin .inputs .action {
+    @apply flex flex-row;
+  }
+  .signin .options {
+    @apply text-white text-center opacity-80 cursor-pointer pt-8 hover:opacity-100 transition-all duration-300 text-[18px];
+  }
+  .signin .actions {
+    @apply absolute right-6 bottom-5 opacity-75 hover:opacity-100 transition-all duration-300 cursor-pointer;
+  }
+  .signin .actions .action {
+    @apply text-[32px];
+  }
+
+  /* Sign In Screen End */
+  .cursorWaiting {
+    @apply cursor-progress;
+  }
+  .cursorDisabled {
+    @apply cursor-wait;
+  }
+  .selectRectangle {
+    @apply border-[1px] border-gray-300 absolute;
+  }
+  .desktop {
+    @apply absolute w-screen h-screen bg-[url(https://cdn.discordapp.com/attachments/823126934157787167/937378934490812436/bg.jpg)] bg-center bg-no-repeat bg-cover text-white;
+  }
+  .desktop .programs {
+    @apply absolute w-72 h-auto flex flex-col gap-y-14 py-6 px-3;
+  }
+  .desktop .programs .program {
+    @apply w-fit h-fit hover:opacity-50 p-2 cursor-pointer flex flex-col;
+  }
+  .desktop .programs .program img {
+    @apply w-12 h-12;
+  }
+  .desktop .programs .program .title {
+    @apply w-full h-full text-center pt-1;
+  }
+  .selected {
+    @apply opacity-50;
+  }
+  .selection-area {
+    position: absolute;
+    background: rgba(46, 115, 252, 0.11);
+    border: 1px solid rgba(98, 155, 255, 0.85);
+    border-radius: 0.15em;
+    z-index: 999999 !important;
+  }
+  .desktop .taskbar {
+    @apply absolute bottom-0 bg-gray-800 w-full h-14 flex flex-row gap-4 text-white pl-2;
+  }
+  .desktop .taskbar .openedApps {
+    @apply absolute bottom-0 bg-gray-800 w-full h-14 flex flex-row gap-4 text-white pl-2;
+  }
+  .desktop .taskbar .openedApps .task {
+    @apply flex hover:bg-gray-600 p-2 cursor-pointer;
+  }
+  .desktop .taskbar .task:not(.date):not(.wallet) {
+    @apply flex hover:bg-gray-600 p-2 cursor-pointer;
+  }
+  .desktop .taskbar .task.date {
+    @apply absolute right-0 h-full w-28 justify-center text-center cursor-pointer flex flex-col text-gray-200;
+  }
+  .desktop .taskbar .task.wallet {
+    @apply absolute bg-gray-700 hover:bg-gray-400 hover:text-gray-900 right-28 h-full w-fit pl-6 pr-6 justify-center text-center cursor-pointer flex flex-col text-gray-200;
+  }
+  .desktop .taskbar .task .active {
+    @apply absolute w-10 h-[2px] bg-cyan-300 bottom-0;
+  }
+  .desktop .windows {
+    @apply text-black w-full h-full pb-14;
+  }
+  .desktop .windows .window {
+    @apply z-20 absolute top-1/3 left-1/4;
+    min-width: 500px !important;
+  }
+  .desktop .windows .window .content {
+    @apply bg-gray-400 h-auto p-6 shadow-xl;
+    /*max-w-[1366px]*/
+  }
+  .desktop .windows .window .controls {
+    @apply flex flex-row justify-between bg-gray-800 h-8 text-white pl-2 pr-2 text-center;
+  }
+  .desktop .windows .window .controls .center div {
+    @apply pt-1 pl-3;
+  }
+  .desktop .windows .window .controls .left div {
+    @apply text-orange-200 pt-1 opacity-75 hover:opacity-100;
+  }
+  .desktop .windows .window .controls .center {
+    @apply text-center text-white opacity-100 hover:opacity-75;
+  }
+  .desktop .windows .window .controls .right {
+    @apply flex flex-row gap-x-3 justify-end;
+  }
+  .desktop .windows .window .controls .right div {
+    @apply text-[21px] text-white cursor-pointer hover:opacity-50;
+  }
+  .desktop .windows .window .controls .left .favicon {
+    @apply pt-[6px];
+  }
+  .desktop .windows .window .controls .left .favicon img {
+    @apply w-5 h-5;
+  }
+  .desktop .windows .window .controls .right:last-child {
+    @apply pt-1;
+  }
+  .desktop .windows .window .footer {
+    @apply bg-gray-800 h-4 text-white text-center text-[12px];
+  }
+  .desktop .taskbar .task.date .showPeekDesktop {
+    @apply absolute right-1 pt-4 w-[3px] h-full bg-white opacity-75 hover:opacity-100;
+  }
+  .desktop .startMenu {
+    @apply absolute left-0 bottom-14 bg-gray-700 w-[512px] h-[640px] z-50 rounded-sm;
+  }
+  .desktop .startMenu .content {
+    @apply flex flex-row text-center;
+  }
+  .desktop .startMenu .content .left {
+    @apply flex-none w-16 h-[640px];
+  }
+  .desktop .startMenu .content .left .content {
+    @apply flex flex-col h-full justify-between pt-4 pb-4;
+  }
+  .desktop .startMenu .content .left .content .bottom {
+    @apply flex flex-col gap-y-6;
+  }
+  .desktop .startMenu .content .left .content .bottom i {
+    @apply text-[22px] opacity-75 hover:opacity-100 cursor-pointer;
+  }
+  .desktop .startMenu .content .left .content .bottom img {
+    @apply rounded-full w-8 ml-[15px];
+  }
+  .desktop .startMenu .content .left .content .top i {
+    @apply text-[22px] opacity-75 hover:opacity-100 cursor-pointer;
+  }
+  .desktop .startMenu .content .center {
+    @apply flex-auto w-48;
+  }
+  .desktop .startMenu .content .right {
+    @apply flex-auto w-96;
+  }
+  .desktop .startMenu .content .center .content {
+    @apply pt-3 flex flex-col;
+  }
+  .desktop .startMenu .content .center .content .apps {
+    @apply flex flex-col gap-y-4 pt-4 pl-6;
+  }
+  .desktop .startMenu .content .center .content .apps .app {
+    @apply flex flex-row gap-x-3 cursor-pointer hover:bg-gray-600 p-2 w-full rounded-sm;
+  }
+  .desktop .startMenu .content .center .content .apps .app .icon img {
+    @apply w-6;
+  }
+  .desktop .startMenu .content .right .content {
+    @apply pt-3 flex flex-col;
+  }
+  .desktop .startMenu .content .right .content .posts {
+    @apply flex flex-col gap-y-4 pt-4 pl-6 pr-6;
+  }
+  .desktop .startMenu .content .right .content .post {
+    @apply break-all w-full h-auto bg-gray-600 p-2 opacity-80 hover:opacity-100 cursor-pointer rounded-sm;
+  }
+  .desktop .contextMenu {
+    @apply absolute overflow-hidden hidden bg-gray-700 w-52 h-auto p-2 gap-y-3 rounded-sm z-50;
+  }
+  .desktop .contextMenu .items {
+    @apply flex flex-col;
+  }
+  .desktop .contextMenu .items .item {
+    @apply hover:bg-gray-500 p-2 cursor-pointer rounded-sm;
+  }
+  .desktop .taskbarContextMenu {
+    @apply absolute overflow-hidden hidden bg-gray-700 w-52 h-auto p-2 gap-y-3 rounded-sm z-50;
+  }
+  .desktop .taskbarContextMenu .items {
+    @apply flex flex-col;
+  }
+  .desktop .taskbarContextMenu .items .item {
+    @apply hover:bg-gray-500 p-2 cursor-pointer rounded-sm;
+  }
+  .desktop .contextArea {
+    @apply absolute w-full h-full bottom-14;
+  }
+
+  /* Chatlion Start */
+
+  .chatArea {
+    @apply flex flex-row justify-between;
+  }
+  .chatArea .content {
+    @apply flex flex-col w-full bg-gray-800 h-screen text-white;
+  }
+
+  .chatArea .content .textbox {
+    @apply flex flex-col-reverse w-full p-2;
+  }
+  .chatArea .content .textbox .text {
+    @apply w-full text-white focus:text-white p-2 rounded-sm focus:border-0 focus:ring-0 bg-gray-700;
+  }
+
+  .chatArea .content .messages {
+    @apply flex-col w-full h-full overflow-auto px-8 py-2 gap-y-4 select-none flow-root;
+  }
+
+  .chatArea .content .messages .message {
+    @apply w-full;
+  }
+
+  .chatArea .content .messages .message.me {
+    @apply flow-root;
+  }
+
+  .chatArea .content .messages .message .text {
+    @apply w-fit;
+  }
+
+  .chatArea .content .messages .message .avatar {
+    @apply w-24 z-30 -left-6 rounded-full;
+  }
+
+  .chatArea .content .messages .message:not(.me) .messageBackground {
+    @apply flex flex-row w-fit bg-gray-600 px-4 rounded-md float-left my-2 justify-items-center items-center align-middle m-auto h-fit;
+  }
+
+  .chatArea .content .messages .message.me .messageBackground {
+    @apply flex flex-row w-fit bg-cyan-600 px-4 rounded-md float-right my-2 justify-items-center items-center align-middle m-auto h-fit;
+  }
+
+  .chatArea .content .messages .message .username {
+    @apply flex bg-gray-500 w-fit px-3 mr-3 min-w-[128px] rounded-sm text-[20px] break-all text-center justify-center opacity-80 hover:opacity-100 cursor-pointer;
+  }
+
+  .chatArea .onlineUsersArea {
+    @apply w-64;
+  }
+
+  .chatArea .onlineUsersArea .userArea {
+    @apply h-screen w-full bg-gray-700 text-white overflow-auto;
+  }
+  .chatArea .onlineUsersArea .usersArea .users {
+    @apply flex flex-col justify-center overflow-auto;
+  }
+  .chatArea .onlineUsersArea .userArea .users .user {
+    @apply flex flex-row gap-x-1 h-10 py-2 w-full justify-center break-all select-none hover:bg-gray-600 cursor-pointer;
+  }
+  .chatArea .onlineUsersArea .userArea .users .user .avatar img {
+    @apply w-6 h-6 rounded-full;
+  }
+  .chatArea .onlineUsersArea .userArea .users .user .username {
+    @apply text-[13px] pt-[2px] break-all;
+  }
+  .chatArea .onlineUsersArea .userArea .title {
+    @apply p-2 font-semibold select-none h-fit text-center;
+  }
+  .chatArea .onlineUsersArea .userArea .users .user .typing {
+    @apply absolute right-0 -mt-2;
+  }
+  .askUsername {
+    @apply absolute z-50 bg-gray-800 w-screen h-screen text-white flex flex-col justify-center text-center m-auto items-center;
+  }
+  .askUsername .message {
+    @apply h-fit w-fit p-4 text-[24px] bg-gray-900 rounded-md absolute top-48 select-none shadow-lg;
+  }
+  .askUsername .text {
+    @apply text-[28px] select-none pb-3;
+  }
+  .askUsername input.username {
+    @apply w-72 text-black focus:text-black h-10 rounded-sm pl-3 select-none shadow-lg;
+  }
+
+  /* Chatlion End */
+}

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatlion</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    </style>
+    <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../dist/app.css">
+</head>
+
+<body>
+    <style>
+        .messages{
+            background-image: url(https://i.pinimg.com/736x/85/ec/df/85ecdf1c3611ecc9b7fa85282d9526e0.jpg);
+            filter: brightness(0.4);
+        }
+        .chatArea .onlineUsersArea .userArea{
+            background-color: #111b21;
+            border-left: 1px solid #8696a026;
+        }
+        .chatArea .content .textbox{
+            background: #202c33;
+        }
+        .chatArea .content .textbox .text{
+            background-color:#2a3942;
+            outline: none;
+        }
+    </style>
+    <div class="askUsername">
+        <div class="message hidden"></div>
+        <div class="text"><span class="liveUsername">Enter Username</span></div>
+        <input type="text" class="username" minlength="3" maxlength="20" placeholder="Shuriken" />
+    </div>
+
+    <div class="chatArea hidden">
+        <div class="content">
+            <div class="messages"></div>
+            <div class="textbox">
+                <input type="text" class="text" minlength="2" maxlength="125" required placeholder="Type something.." />
+            </div>
+        </div>
+        <div class="onlineUsersArea">
+            <div class="userArea">
+                <div class="title">
+                    <span class="onlineUsersCount">-</span>
+                </div>
+                <div class="users"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/2.18.2/core.min.js" integrity="sha512-g8TodWNzrsxJkADtGuwwvVND2MVKUuisGWZsj2/NtLA/XFDq9biQpeDMcJ8iu71OpabLfDxfEAdTQFdXjmV60A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.0/socket.io.min.js" integrity="sha512-I9p4eOeWXGM9m5GhJYd3UDUA5Lr+Epp5e4ykWFYW9hv3jZqdR92S5p+ApMSWuMaV4E+JqILepP1G9kNer4AFGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+        const chatConfig = {
+            "username": null,
+            "socketId": null,
+            "isTyping": false,
+            "cooldown": false,
+            "dev": false,
+            //"server": "localhost:8443",
+            "server": "wss://ws.xaron.pw:8443"
+        }
+
+        const encrypt = (text) => {
+            return CryptoJS.AES.encrypt(text, "42d9405fc876e4c820ab91cecdba79e3de31d31d").toString();
+        };
+
+        const decrypt = (hash) => {
+            return CryptoJS.AES.decrypt(hash, "42d9405fc876e4c820ab91cecdba79e3de31d31d").toString(CryptoJS.enc.Utf8);
+        };
+
+        const textboxAction = (action) => {
+            const selector = $("input.text")
+            if (action) {
+                selector.removeAttr("disabled")
+                selector.removeClass("opacity-40")
+            } else {
+                selector.attr("disabled", true)
+                selector.addClass("opacity-40")
+            }
+        }
+
+        const usernameAction = (action) => {
+            const selector = $(".askUsername > .username")
+            if (action) {
+                selector.removeAttr("disabled")
+                selector.removeClass("opacity-40")
+            } else {
+                selector.attr("disabled", true)
+                selector.addClass("opacity-40")
+            }
+        }
+
+        const pushError = (text, timeout = null) => {
+            $(".askUsername > .message").hide()
+            $(".askUsername > .message").fadeIn(1000)
+            try {
+                if (text) {
+                    $(".askUsername > .message").html(text)
+                } else {
+                    $(".askUsername > .message").html("Unknown error occurred")
+                }
+                if (timeout) {
+                    setTimeout(() => {
+                        $(".askUsername > .message").fadeOut(1000)
+                    }, timeout * 1000)
+                }
+            } catch (err) {}
+        }
+
+        const log = (text) => console.log("[LionOS][Chatlion] " + text)
+            //window.scrollTo(0, document.body.scrollHeight) //autoScroll
+        $(document).ready(() => {
+                    $(document).bind("contextmenu", function(e) {
+                        e.preventDefault()
+                    })
+                    usernameAction(false)
+
+                    //kaldırılacak
+                    if (chatConfig["dev"]) {
+                        $(".askUsername").hide()
+                        $(".chatArea").removeClass("hidden")
+                        textboxAction(true)
+                    }
+
+                    //$(".askUsername > .username").focus() //not work btw, idk
+
+                    $(".askUsername > .username").keypress(function(e) {
+                        if (this.value.length <= 0) {
+                            $(".liveUsername").html("Enter Username")
+                        } else {
+                            $(".liveUsername").html("Username: " + this.value)
+                        }
+                        if (e.keyCode == 13) {
+                            usernameAction(false)
+                            setTimeout(() => {
+                                if (JSON.parse(decrypt(localStorage.getItem("staticConfig")))["wallet"]) {
+                                    if (this.value.length >= 3) {
+                                        socket.emit("setData", encrypt(JSON.stringify({
+                                            "username": this.value,
+                                            "wallet": JSON.parse(decrypt(localStorage.getItem("staticConfig")))["wallet"]
+                                        })))
+                                    } else {
+                                        pushError("Username should be minimum 3 characters.", 3)
+                                    }
+                                } else {
+                                    pushError("Wallet must be connected to LionOS.", 3)
+                                }
+                                usernameAction(true)
+                            }, 1000)
+                        }
+                    });
+
+                    $(".askUsername > .username").keyup(function() {
+                        if (this.value.length <= 0) {
+                            $(".liveUsername").html("Enter Username")
+                        } else {
+                            $(".liveUsername").html("Username: " + this.value)
+                        }
+                    });
+
+                    const socket = io.connect(chatConfig["server"], {
+                        reconnectionDelayMax: 1000,
+                        auth: {
+                            type: encrypt("client"),
+                            token: encrypt((Math.floor(new Date().getTime() / 1000) + 30).toString())
+                        },
+                        reconnectionAttempts: Infinity,
+                        secure: true,
+                        autoConnect: true,
+                        reconnect: true
+                    })
+                    socket.on("connect", (sock) => {
+                        log("Connected to server")
+                        usernameAction(true)
+                        setTimeout(() => pushError("Successfully connected to server", 3), 1000)
+                    })
+
+                    socket.on("message", (data) => {
+                                try {
+                                    data = JSON.parse(decrypt(data))
+                                    if (data.message) {
+                                        $(".chatArea > .content > .messages").append(`<div class="message${(data.userId == chatConfig["socketId"] ? " me" : "")}"><div class="messageBackground">${(data.userId != chatConfig["socketId"] ? `<div class="username">${data.username}</div>` : "")}<div class="text">${data.message}</div></div></div>`)
+                            }
+                        } catch (err) {}
+                    })
+
+                    socket.on("onlineUsers", (data) => {
+                        data = JSON.parse(decrypt(data))
+                        try {
+                            if (data.guestUsers && data.onlineUsers) {
+                                const guestUsers = data.guestUsers
+                                const onlineUsers = data.onlineUsers
+                                $(".onlineUsersCount").html(`${onlineUsers.length} online user${(onlineUsers.length >= 2 ? "s" : "")}, ${guestUsers.length} guest${(guestUsers.length >= 2 ? "s" : "")}`)
+
+                                if (onlineUsers.length >= 1) {
+                                    
+                                    $(".userArea > .users").html("")
+                                    onlineUsers.forEach((u) => {
+                                        for(let i = 0; i < 1; i++) {
+                                            $(".userArea > .users").append(`<div class="user${(chatConfig["socketId"] == u.id ? " bg-gray-900" : "")}" data-id="${u.id}">
+                                <div class="avatar">
+                                    <img src="${(u.avatar ? u.avatar : "https://www.tenforums.com/geek/gars/images/2/types/thumb_14400082930User.png")}" />
+                                </div>
+                                <div class="username${(u.isAdmin ? " text-red-700 font-bold" : "")}">${u.username}</div>
+                                <div class="typing${(!u.isTyping ? " hidden" : "")}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="38px" height="38px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                                        <circle cx="84" cy="50" r="10" fill="#93dbe9">
+                                            <animate attributeName="r" repeatCount="indefinite" dur="0.5s" calcMode="spline" keyTimes="0;1" values="10;0" keySplines="0 0.5 0.5 1" begin="0s"></animate>
+                                            <animate attributeName="fill" repeatCount="indefinite" dur="2s" calcMode="discrete" keyTimes="0;0.25;0.5;0.75;1" values="#93dbe9;#3b4368;#5e6fa3;#689cc5;#93dbe9" begin="0s"></animate>
+                                        </circle><circle cx="16" cy="50" r="10" fill="#93dbe9">
+                                        <animate attributeName="r" repeatCount="indefinite" dur="2s" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" values="0;0;10;10;10" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="0s"></animate>
+                                        <animate attributeName="cx" repeatCount="indefinite" dur="2s" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" values="16;16;16;50;84" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="0s"></animate>
+                                        </circle><circle cx="50" cy="50" r="10" fill="#689cc5">
+                                        <animate attributeName="r" repeatCount="indefinite" dur="2s" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" values="0;0;10;10;10" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.5s"></animate>
+                                        <animate attributeName="cx" repeatCount="indefinite" dur="2s" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" values="16;16;16;50;84" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.5s"></animate>
+                                        </circle><circle cx="84" cy="50" r="10" fill="#5e6fa3">
+                                        <animate attributeName="r" repeatCount="indefinite" dur="2s" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" values="0;0;10;10;10" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-1s"></animate>
+                                        <animate attributeName="cx" repeatCount="indefinite" dur="2s" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" values="16;16;16;50;84" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-1s"></animate>
+                                        </circle><circle cx="16" cy="50" r="10" fill="#3b4368">
+                                        <animate attributeName="r" repeatCount="indefinite" dur="2s" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" values="0;0;10;10;10" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-1.5s"></animate>
+                                        <animate attributeName="cx" repeatCount="indefinite" dur="2s" calcMode="spline" keyTimes="0;0.25;0.5;0.75;1" values="16;16;16;50;84" keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-1.5s"></animate>
+                                        </circle>
+                                        </svg>
+                                </div>
+                            </div>`)
+                                        }
+                                    })
+                                }
+                            }
+                        } catch (err) {}
+                    })
+
+                    $(".chatArea > .content > .textbox > input").keypress(function(e) {
+                        if (!chatConfig["typing"]) {
+                            if (chatConfig["cooldown"]) return
+                            chatConfig["typing"] = true
+                            socket.emit("setTyping", encrypt(JSON.stringify({
+                                "isTyping": true
+                            })))
+                            setTimeout(() => {
+                                socket.emit("setTyping", encrypt(JSON.stringify({
+                                    "isTyping": false
+                                })))
+                                setTimeout(() => {
+                                    chatConfig["typing"] = false
+                                }, 500)
+                            }, 4000)
+                        }
+                        if (e.keyCode == 13) {
+                            if (chatConfig["cooldown"]) return
+                            if (this.value.length >= 2) {
+                                chatConfig["cooldown"] = true
+                                textboxAction(false)
+                                socket.emit("message", encrypt(JSON.stringify({
+                                    "message": $(".chatArea > .content > .textbox > input").val()
+                                })))
+                                $(".chatArea > .content > .textbox > input").val("")
+                                setTimeout(() => {
+                                    chatConfig["cooldown"] = false
+                                    textboxAction(true)
+                                }, 3000)
+                            }
+                        }
+                    });
+
+                    socket.on("authenticate", (data) => {
+                        try {
+                            data = JSON.parse(decrypt(data))
+                            chatConfig["username"] = data.username
+                            chatConfig["socketId"] = data.id
+
+                            $(".askUsername")
+                                .animate({
+                                    "bottom": "2000px"
+                                }, 2000);
+                            $(".onlineUsersArea").fadeIn(1500)
+                            $(".chatArea").removeClass("hidden")
+                            $(".chatArea").fadeOut(100)
+                            $(".chatArea").fadeIn(2000)
+                            textboxAction(true)
+                        } catch (err) {}
+                    })
+
+                    socket.on("messages", (data) => {
+                        try {
+                            data = JSON.parse(decrypt(data))
+                            if(Object.keys(data).length >= 1) {
+                                Object.keys(data).forEach((k) => {
+                                    $(".chatArea > .content > .messages").append(`<div class="message"><div class="messageBackground"><div class="username">${data[k].username}</div><div class="text">${data[k].message}</div></div></div>`)
+                                })
+                            }
+                        } catch(err) {}
+                    })
+
+                    socket.on("systemError", (data) => {
+                        data = JSON.parse(decrypt(data))
+                        $(".chatArea").addClass("hidden")
+                        $(".askUsername").show()
+                        pushError(data.message, data.timeout)
+                        usernameAction(false)
+                        if (data.timeout) {
+                            setTimeout(() => {
+                                usernameAction(true)
+                            }, (data.timeout + 1) * 1000)
+                        }
+
+                    })
+
+                    socket.on("connect_error", () => {
+                        log("Disconnected from server, trying to reconnect")
+                        pushError("Disconnected from server, trying to reconnect")
+                        usernameAction(false)
+                    })
+
+                    
+
+                    socket.on("disconnect", () => {
+                        log("Disconnected from server")
+
+                        if (!chatConfig["dev"]) {
+                            chatConfig["username"] = null
+                            chatConfig["socketId"] = null
+                            $(".askUsername").removeClass("hidden")
+                            $(".askUsername").show()
+                            if(chatConfig["socketId"]) {
+                                $(".askUsername")
+                                .animate({
+                                    "top": "2000px"
+                                }, 2000);
+                            }
+                            
+                            //socket.emit("onlineUsers")
+                            $(".chatArea").fadeOut(1000)
+                            setTimeout(() => $(".chatArea").addClass("hidden"), 1500)
+
+                            setTimeout(() => pushError("Disconnected from server"), 2000)
+                            socket.disconnect()
+                            textboxAction(false)
+                            usernameAction(false)
+                        }
+                    })
+                })
+    </script>
+</body>
+
+</html>

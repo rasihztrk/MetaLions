@@ -1,0 +1,378 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+</style>
+<link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet"
+    type="text/css" />
+<link rel="stylesheet" href="./dist/app.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<style>
+    body {
+        background-image: url('./assets/images/bgComing.png');
+    }
+
+
+    * {
+        overflow: unset;
+    }
+
+    .containerOverFlow {
+        overflow-y: scroll !important;
+    }
+
+    .iconArea {
+        padding-top: 20px;
+        z-index: 1;
+    }
+
+    .iconCard {
+        cursor: pointer;
+        display: flex;
+        overflow: scroll;
+        width: 240px;
+        height: 260px;
+        border-radius: 16px;
+        position: relative;
+    }
+
+    .iconImage {
+        width: 240px;
+        height: 260px;
+        border-radius: 16px 0px 0px 16px;
+    }
+
+    .firstCard {
+        position: relative;
+        width: 240px;
+        height: 260px;
+    }
+
+    .iconCardHood {
+        font-size: 18px;
+        position: absolute;
+        bottom: 0px;
+        left: 20px;
+        color: white;
+        font-weight: 800;
+
+    }
+
+    .iconcardDiv {
+        position: absolute;
+    }
+
+    .iconCardText {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 16px;
+    }
+
+    .iconCardtextArea {
+        width: 230px;
+        height: 260px;
+        border-radius: 0px 16px 16px 0px;
+        background-color: white;
+        padding: 14px;
+        position: absolute;
+        left: 240px;
+        top: 0px;
+    }
+
+    .iconCardHoodTwo {
+        font-size: 20px;
+        font-weight: 800;
+    }
+
+    .containerOverFlow::-webkit-scrollbar {
+        display: none;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .iconCard::-webkit-scrollbar {
+        display: none;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    section {
+        height: 750px;
+    }
+
+    .job {
+        margin-bottom: 5px;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .iconCardtextArea {
+            width: 240px;
+        }
+
+        body {
+            background-image: none;
+            background-color: #141A1D;
+        }
+
+    }
+
+    .lionTwo {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        bottom: 10px;
+        animation: animatedImage 5s linear infinite;
+    }
+
+    @keyframes animatedImage {
+        0% {
+            transform: rotate(25deg);
+        }
+
+        25% {
+            transform: rotate(-25deg);
+
+        }
+
+        50% {
+            transform: rotate(25deg);
+        }
+
+        75% {
+            transform: rotate(-25deg);
+
+        }
+
+        100% {
+            transform: rotate(25deg);
+        }
+    }
+</style>
+<section class="iconArea">
+    <div class="container containerOverFlow">
+        <div class="row">
+
+            <div class="col-12 col-sm-6 col-md-4 mb-2 d-flex justify-content-center ">
+                <div class="iconCard">
+                    <div class="iconcardDiv">
+                        <div class="firstCard">
+                            <img class="iconImage" src="./assets/images/21.png" alt="">
+                            <p class="iconCardHood">Mechatron</p>
+                        </div>
+                        <div class="iconCardtextArea">
+                            <p class="job">Comminity Manager</p>
+                            <p class="iconCardText">Mechatron is a science lover and industrialist mechatronics
+                                engineer, who did his bachelor thesis on a robotic arm commanded by brain signals.
+                                Playing real-time strategy games such as Europe Universalis IV is an escape from the
+                                chaoticity of the real life for him. He follows the NFT World with amazement and
+                                recently has started serving the MetaLions Project as a Community Manager.
+                            </p>
+                            <div>
+                                <a target="_blank" href="https://www.instagram.com/yusufkurttt/">
+                                    <img class="lionTwo" src="./assets/images/lion2.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-2  d-flex justify-content-center ">
+                <div class="iconCard">
+                    <div class="iconcardDiv">
+                        <div class="firstCard">
+                            <img class="iconImage" src="./assets/images/20.png" alt="">
+                            <p class="iconCardHood">JungleKing</p>
+                        </div>
+                        <div class="iconCardtextArea">
+                            <p class="job">Developer Team</p>
+                            <p class="iconCardText">JungleKing is a long-time investor and a person in the industry, who
+                                met the technology with IRC/mIRC developments that he was interested in his young years.
+                                Then after completing his education, he continued this as a hobby and he was interested
+                                in hotel management for many years. Now he spends most of his time brainstorming for the
+                                strategies of this project. He used to like to play games but now he's too busy for all
+                                of that stuff.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-2 d-flex justify-content-center ">
+                <div class="iconCard">
+                    <div class="iconcardDiv">
+                        <div class="firstCard">
+                            <img class="iconImage" src="./assets/images/22.png" alt="">
+                            <p class="iconCardHood">F!RED</p>
+                        </div>
+                        <div class="iconCardtextArea">
+                            <p class="job">Growth Team - Staff Leader</p>
+                            <p class="iconCardText">
+                            </p>
+                            <div>
+                                <a target="_blank" href="https://twitter.com/firedsol">
+                                    <img class="lionTwo" src="./assets/images/lion2.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-2 d-flex justify-content-center ">
+                <div class="iconCard">
+                    <div class="iconcardDiv">
+                        <div class="firstCard">
+                            <img class="iconImage" src="./assets/images/24.png" alt="">
+                            <p class="iconCardHood">5iftySe7en</p>
+                        </div>
+                        <div class="iconCardtextArea">
+                            <p class="job">Artist</p>
+                            <p class="iconCardText">5iftySe7en:
+                                After completing his professional education in the field of architecture and design,
+                                5iftySe7en has served leading brands within that sector. He started digital art 13 years
+                                ago as a hobby, within the 13 years he had many successes while also partnering with
+                                world-famous names. He has been providing artistic support to the NFT Sector for the
+                                past 2 years. 5iftySe7en’s been the artist of many projects such as Danerob, Danerob
+                                Puppies and Billionaire Bambinos.
+                            </p>
+                            <div>
+                                <a target="_blank" href="https://twitter.com/5iftyse7ennft">
+                                    <img class="lionTwo" src="./assets/images/lion2.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-2 d-flex justify-content-center ">
+                <div class="iconCard">
+                    <div class="iconcardDiv">
+                        <div class="firstCard">
+                            <img class="iconImage" src="./assets/images/25.png" alt="">
+                            <p class="iconCardHood">Swagat </p>
+                        </div>
+                        <div class="iconCardtextArea">
+                            <p class="job">Growth Team - Staff Leader</p>
+                            <p class="iconCardText">
+                                Swagat is a big crypto and NFT fanatic with his priority being long term holds. He is
+                                a big football fan and loves his anime and music. He's currently working on his Commerce
+                                degree but is full bullish on web3 and what it brings.
+                            </p>
+                            <div>
+                                <a target="_blank" href="https://twitter.com/SwagatKumarP11">
+                                    <img class="lionTwo" src="./assets/images/lion2.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-2 d-flex justify-content-center ">
+                <div class="iconCard">
+                    <div class="iconcardDiv">
+                        <div class="firstCard">
+                            <img class="iconImage" src="./assets/images/23.png" alt="">
+                            <p class="iconCardHood">johhny</p>
+                        </div>
+                        <div class="iconCardtextArea">
+                            <p class="job">Growth Team - Marketing</p>
+                            <p class="iconCardText">johhny :
+                                Is a fashion designer who is very excited about this project. She has a degree on this
+                                subject and keeps improving herself by engaging in freelance jobs. As its profession
+                                suggests, her main focus is on merch design as outlined in the roadmap. She has three
+                                cats and is obsessed with them. She is also a coffee addict, almost can't live without
+                                it.
+                            </p>
+                            <div>
+                                <a target="_blank" href="https://twitter.com/solanaapeman ">
+                                    <img class="lionTwo" src="./assets/images/lion2.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center ">
+                <div class="iconCard">
+                    <div class="iconcardDiv">
+                        <div class="firstCard">
+                            <img class="iconImage" src="./assets/images/23.png" alt="">
+                            <p class="iconCardHood">Rina</p>
+                        </div>
+                        <div class="iconCardtextArea">
+                            <p class="job">Graphic Desing</p>
+                            <p class="iconCardText">
+                                Rina : Is a fashion designer who is very excited about this project. She has a degree on this subject and keeps improving herself by engaging in freelance jobs. As its profession suggests, her main focus is on merch design as outlined in the roadmap. She has three cats and is obsessed with them. She is also a coffee addict, almost can't live without it.
+                            </p>
+                            <div>
+                                <a target="_blank" href="https://www.instagram.com/kkkateai/">
+                                    <img class="lionTwo" src="./assets/images/lion2.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-2  d-flex justify-content-center ">
+                <div class="iconCard">
+                    <div class="iconcardDiv">
+                        <div class="firstCard">
+                            <img class="iconImage" src="./assets/images/27.jpg" alt="">
+                            <p class="iconCardHood">xaron</p>
+                        </div>
+                        <div class="iconCardtextArea">
+                            <p class="jon">Developer Team</p>
+                            <p class="iconCardText">xaron: He had been working on the development of projects as a
+                                freelancer for a long time and now he wanted to work with more effort on a single
+                                project, Metalions became his new and only job.
+                                When the team and the community dreams of something, he basically makes it happen.
+                                Hobbies: eat - sleep - build - repeat 🙂
+                            </p>
+                            <div>
+                                <a target="_blank" href="https://github.com/xaronnn">
+                                    <img class="lionTwo" src="./assets/images/lion2.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-2  d-flex justify-content-center ">
+                <div class="iconCard">
+                    <div class="iconcardDiv">
+                        <div class="firstCard">
+                            <img class="iconImage" src="./assets/images/28.png" alt="">
+                            <p class="iconCardHood">Marzik</p>
+                        </div>
+                        <div class="iconCardtextArea">
+                            <p class="job">Staff</p>
+                            <p class="iconCardText">
+                                Marzik , who has been following the crypto market for a long time, continues to
+                                improve himself in the mystery of the nft and metaverse world, and continues to work as
+                                a communication moderator in the metalions project.
+                            </p>
+                            <div>
+                                <a target="_blank" href="https://www.instagram.com/nick_24.07/">
+                                    <img class="lionTwo" src="./assets/images/lion2.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    $(".iconcardDiv").mouseenter(function () {
+        $(this).animate({ left: "-240px" }, 300);
+    });
+
+    $(".iconCard").mouseleave(function () {
+        $(".iconcardDiv").animate({ left: "0px" }, 300);
+    });
+</script>
